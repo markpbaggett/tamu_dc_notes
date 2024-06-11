@@ -377,9 +377,11 @@ Please note that this collection is under construction and some images are missi
 
 This is split into many collections and subcollections and almost everything appears to be JPG.
 
+Here is a sample of three presidential visit collections merged and served in Canopy.
+
 .. raw:: html
 
-   <iframe src="https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/111584" width="750" height="600"></iframe>
+   <iframe src="https://markpbaggett.github.io/tamu-presidential-visits" width="750" height="600"></iframe>
 
 
 **Stack**
@@ -388,8 +390,6 @@ This is split into many collections and subcollections and almost everything app
 
 **Questions and Thoughts**
 
-* This should be driven by IIIF.  Is it?
-* How does IRIIIFService serve IIIF from DSPACE?
 * Need to review.
 
 **IIIF**
@@ -453,3 +453,52 @@ API at https://api.library.tamu.edu/iiif-service/dspace/presentation.
 .. raw:: html
 
    <iframe src="https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/2808" width="750" height="600"></iframe>
+
+On closer inspection, it appears that the IIIF service makes use of the SPARQL served from `here <https://oaktrust.library.tamu.edu/rdf/handle/1969.1/2808>`_:
+
+.. code-block:: turtle
+
+    @prefix void:  <http://rdfs.org/ns/void#> .
+    @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+    @prefix bibo:  <http://purl.org/ontology/bibo/> .
+    @prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+    @prefix dspace: <http://digital-repositories.org/ontologies/dspace/0.1.0#> .
+    @prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+    <https://oaktrust.library.tamu.edu/rdf/resource/1969.1/2808>
+            dspace:hasBitstream        <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/24/001pg08.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/4/001pg08.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/7/001pg05.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/17/001pg01.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/12/001insidefrontcover.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/13/001frontcover.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/26/GFolio001.zip> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/22/001pg06.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/25/001pg09.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/8/001pg04.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/5/001pg07.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/14/001backcover.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/1/GFolio001.pdf> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/18/001pg02.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/6/001pg06.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/23/001pg07.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/3/001pg09.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/19/001pg03.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/9/001pg03.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/16/001insidefrontcover.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/10/001pg02.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/20/001pg04.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/11/001pg01.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/21/001pg05.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/15/001frontcover.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/2/001backcover.tif> ;
+            dspace:isPartOfCollection  <https://oaktrust.library.tamu.edu/rdf/resource/1969.1/2490> ;
+            dc:date                    "2012-06-01T22:02:19Z"^^xsd:dateTime , "2005-12-01T21:36:07Z"^^xsd:dateTime ;
+            dc:format                  "109947612 bytes" , "110574680 bytes" , "109797024 bytes" , "17586214 bytes" , "110608596 bytes" , "110535360 bytes" , "111346436 bytes" , "108709108 bytes" , "106885740 bytes" , "application/pdf" , "109609844 bytes" , "108326004 bytes" , "109371844 bytes" , "image/tiff" , "109275132 bytes" ;
+            dc:language                "en-US" ;
+            dc:publisher               "Geological Survey (United States)" ;
+            dc:rights                  "No copyright; for more information see: https://rightsstatements.org/page/NoC-US/1.0/" ;
+            dcterms:available          "2005-12-01T21:36:07Z"^^xsd:dateTime , "2012-06-01T22:02:19Z"^^xsd:dateTime ;
+            dcterms:hasPart            <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/5/001pg07.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/9/001pg03.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/18/001pg02.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/3/001pg09.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/6/001pg06.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/22/001pg06.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/4/001pg08.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/20/001pg04.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/21/001pg05.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/7/001pg05.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/26/GFolio001.zip> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/25/001pg09.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/10/001pg02.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/2/001backcover.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/12/001insidefrontcover.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/15/001frontcover.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/24/001pg08.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/19/001pg03.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/14/001backcover.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/11/001pg01.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/17/001pg01.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/13/001frontcover.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/16/001insidefrontcover.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/8/001pg04.tif> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/23/001pg07.jpg> , <https://oaktrust.library.tamu.edu/bitstream/1969.1/2808/1/GFolio001.pdf> ;
+            dcterms:isPartOf           <https://oaktrust.library.tamu.edu/rdf/resource/1969.1/2490> ;
+            dcterms:issued             "1894" ;
+            dcterms:rights             <https://rightsstatements.org/page/NoC-US/1.0/> ;
+            dcterms:title              "Livingston folio, Montana." ;
+            bibo:uri                   <https://hdl.handle.net/1969.1/2808> ;
+            void:sparqlEndpoint        <https://fuseki.library.tamu.edu/dspace/sparql> ;
+            foaf:homepage              <https://oaktrust.library.tamu.edu> .
+
+It's not clear from here whether canvases are derived from :code:`dcterms:hasPart`, :code:`dspace:hasBitstream`, or something else.
+
+**Stack**
+
+* DSPACE
+* Cantaloupe
+* iRIIIFService
+* Mirador
+
+**Questions and Thoughts**
+
+* How does IRIIIFService leverage RDF or something else to order sequences and canvases?
+* What about the PDFs in DSPACE? What happens with those? (see turtle above)
+
+**IIIF**
+
+* Image and Presentation where possible
