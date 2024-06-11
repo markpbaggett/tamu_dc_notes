@@ -314,3 +314,142 @@ partnership between the College of Medicine and the University Libraries.
 
 * Current: Image, Presentation, Mirador
 * Future: Similar
+
+===============================================
+College Of Veterinary Medicine Image Collection
+===============================================
+
+`Homepage <https://library.tamu.edu/discovery/discovery-context/cvm-images?direction=ASC>`_
+
+Over the past 100 years, photographers have documented the history of the College of Veterinary Medicine & Biomedical
+Sciences. This collection highlights the changing face of the people, technology, and facilities of the college. It
+spans the history from the earliest undergraduate classes in veterinary science in the 1890s to the cutting edge
+research of the 21st Century. Thanks to the contributions of generous former students and faculty, and the efforts of
+various historians and archivists, the images found here, if not complete, are a fair representation of the growth and
+development of Veterinary Medicine at Texas A&M.
+
+There are 1491 Works here.
+
+**Stack**
+
+* SAGE
+* Cantaloupe
+* iRIIIFService
+* Mirador
+
+**Questions**
+
+* If this is SAGE, how are context pages added? Can they be added?
+
+**IIIF**
+
+* Current: Image, Presentation, Mirador
+* Future: Similar
+
+===========================
+Cushing Exhibition Catalogs
+===========================
+
+`Homepage <https://oaktrust.library.tamu.edu/handle/1969.1/160506>`_
+
+Collection of catalogs from Cushing Memorial Library & Archives exhibits. All seem to be PDFs.
+
+**Stack**
+
+* DSPACE
+
+**Questions**
+
+* Need to look at more deeply
+* What might serving this with Clover or UV look like?
+
+**IIIF**
+
+* None
+
+====================================
+Cushing Historical Images Collection
+====================================
+
+The Cushing Memorial Library and Archives maintains an extensive photographic collection of over 300,000 images. The collection continues to grow. These images are in a wide variety of formats and sizes, including negatives on glass plates, post cards, and various early types of prints. The collection is organized by subject and contains a visual representation of nearly every aspect of Texas A&M University’s long and storied past beginning with the opening of the school in 1876. Categories include such subjects as campus views, individual buildings, athletics, research, teaching, student life, members of the faculty, visiting dignitaries, and important events. Most of the photographs were acquired through donation or from various units of the university.
+
+Please note that this collection is under construction and some images are missing. These images can be found in the corresponding Flickr collection that mirrors this collection: http://www.flickr.com/photos/cushinglibrary/collections/72157616848695613/
+
+This is split into many collections and subcollections and almost everything appears to be JPG.
+
+.. raw:: html
+
+   <iframe src="https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/111584" width="750" height="600"></iframe>
+
+
+**Stack**
+
+* DSPACE
+
+**Questions and Thoughts**
+
+* This should be driven by IIIF.  Is it?
+* How does IRIIIFService serve IIIF from DSPACE?
+* Need to review.
+
+**IIIF**
+
+* Image and Presentation
+
+===================================
+Electronic Theses and Dissertations
+===================================
+
+`Homepage <https://oaktrust.library.tamu.edu/handle/1969.1/1>`_
+
+This collection includes digitized theses and dissertations (1922-2004) and theses and dissertations directly deposited
+after 2004.
+
+**Stack**
+
+* DSPACE
+
+==========================================
+The Frederick C. Cuny/INTERTECT Collection
+==========================================
+
+`Homepage <https://oaktrust.library.tamu.edu/handle/1969.1/159819>`_
+
+Frederick C. Cuny was an American humanitarian and preeminent disaster relief specialist who worked to improve the lives of people affected by natural and man-made disasters around the world. Over his 26 year career, Cuny worked in crises in more than fifty countries, including Biafra, Guatemala, Bangladesh, Cambodia, India, Iraq, Kuwait, Somalia, Bosnia, and Chechnya. His larger than life personality, uncanny ability to “make things happen,” and his innovative ideas drove him to the forefront of the disaster response field.
+
+The collection contains the working library, office files, press clippings, slides, photographs and Beta and VHS tapes of Cuny and his team at the disaster relief/response firm, Intertect, and at the non-profit organization he co-founded in 1987, the Intertect Institute. The items currently digitized represent a small section of the collection chosen for their significance by members of the Cuny Center for the Study of Societies in Crisis.
+
+This appears to be a mix of PDFs and JPGs.
+
+.. raw:: html
+
+   <iframe src="https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/160086" width="750" height="600"></iframe>
+
+**Stack**
+
+* DSPACE
+
+**Questions and Thoughts**
+
+* Parts of this should be driven by IIIF.  Is it?
+* How does IRIIIFService serve IIIF from DSPACE? Ah! https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/160086
+* Need to review.
+
+**IIIF**
+
+* Image and Presentation where possible
+
+===================================
+Geologic Atlas of the United States
+===================================
+
+A set of 227 folios published by the U.S. Geological Survey between 1894 and 1945. Each folio includes both topographic
+and geologic maps for each quad represented in that folio, as well as descriptions of the basic and economic geology of
+the area. The Geologic Atlas collection is maintained by the Maps unit.
+
+This is the first collection I've seen with compound works as IIIF. It looks like these are served from DSPACE via an
+API at https://api.library.tamu.edu/iiif-service/dspace/presentation.
+
+.. raw:: html
+
+   <iframe src="https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/2808" width="750" height="600"></iframe>
