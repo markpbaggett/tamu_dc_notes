@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "towards-iiif-centered-digital-collections"
+version = "0.1.0"
+description = ""
+authors = ["Mark Baggett <markpbaggett@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+Sphinx = "^7.3.7"
+sphinx-rtd-theme = "^2.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
