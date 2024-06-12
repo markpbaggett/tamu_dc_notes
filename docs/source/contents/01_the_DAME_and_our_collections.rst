@@ -502,3 +502,156 @@ It's not clear from here whether canvases are derived from :code:`dcterms:hasPar
 **IIIF**
 
 * Image and Presentation where possible
+
+============================================================
+The Sandy Hereld Memorial Digitized Media Fanzine Collection
+============================================================
+
+`Homepage <https://oaktrust.library.tamu.edu/handle/1969.1/149935>`_
+
+The Sandy Hereld Collection consists of thousands of digitized images of media fanzines, letterzines, and club
+newsletters, dating from the late 1960s through materials published online or in print in 2013. The collection is an
+unparalleled assembly of media fanworks that document generations of fans’ continued creative engagement with media
+productions meaningful to them. Among the productions chronicled particularly well in the Hereld Collection are: Beauty
+and the Beast (1987-1990), Blake’s 7, Doctor Who, The Professionals, Star Trek, Star Wars, and Starsky & Hutch. But the
+collection also contains fanzines relating to numerous other productions, such as the Harry Potter book/movie series,
+Due South, Miami Vice, Simon & Simon, and many others. Also in the collection are many anthologies of stories from
+multiple fandoms.
+
+This collection must be viewed on campus or via the VPN. It appears to consist entirely of PDFs.
+
+**Stack**
+
+* DSPACE
+
+**Questions and Thoughts**
+
+* ?
+
+**IIIF**
+
+* ?
+
+===================================================================
+Hernán Contreras & Gerald Griffin Collection of NASA A/V Recordings
+===================================================================
+
+`Homepage <https://avalon.library.tamu.edu/collections/sf268521w>`_
+
+This collection contains digitized video and audio from the Hernán Contreras ’62 Collection of NASA Events Film Reels
+and the Gerald D. “Gerry” Griffin ’56 Collection of NASA Video and Audio Recordings. Contreras was an In-flight Design
+Specialist for Lockheed and later worked for United Space Alliance, a spaceflight operations company co-owned by
+Rockwell International and Lockheed Martin. Griffin served as a Flight Director during the Apollo Missions and later as
+Director of the Johnson Space Center in Clear Lake, TX. The original audio cassette tapes, VHS tapes, and/or 16 mm films
+for both the Contreras and Griffin Collections are housed at Cushing Memorial Library & Archives.
+
+Unlike most other Avalon collections, this is not restricted.
+
+There are no Closed Caption Files even though some items `like this <https://avalon.library.tamu.edu/media_objects/v118rd703>`_
+have an audio codec.
+
+**Stack**
+
+* Avalon
+
+**Questions and Thoughts**
+
+* Should we generate closed captions?
+* If we were to upgrade Avalon, we'd get IIIF.
+* For now, maybe it'd be worth building out a IIIF recipe around one of these as proof of concept.
+* Are files delivered with Avalon stored in Avalon?
+
+**IIIF**
+
+* Current: None
+* Future: Presentation
+
+=======================
+Historical Maps of Cuba
+=======================
+
+`Homepage <https://library.tamu.edu/discovery/discovery-context/tamu-cuba-maps?direction=ASC>`_
+
+This collection contains digital versions of historical maps of Cuba held by the Texas A&M University Libraries. Subject
+matter includes soils and population.
+
+There are 39 items. Many of the maps include a corresponding :code:`KML` that supplements the item loaded in the viewer.
+The KMLs I've seen thus far are relatively simple and only contain and initial starting location for where to associate
+the map with lat / long coords:
+
+.. code-block:: kml
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+    <NetworkLink>
+        <name>Cuba 1943</name>
+            <LookAt>
+                <longitude>-79.5</longitude>
+                <latitude>22.5</latitude>
+                <altitude>0</altitude>
+                <range>1250000</range>
+                <tilt>0</tilt>
+                <heading>0</heading>
+            </LookAt>
+        <Style id="inline">
+            <ListStyle>
+                <listItemType>checkHideChildren</listItemType>
+                <bgColor>00ffffff</bgColor>
+                <maxSnippetLines>2</maxSnippetLines>
+            </ListStyle>
+        </Style>
+        <Link>
+            <href>http://arcgis.library.tamu.edu/flexviewer/travis/cuba_1943/Cuba 1943_1_3_4_2.kmz</href>
+        </Link>
+    </NetworkLink>
+    </kml>
+
+Interestingly, some of the intermediates here have JPF extensions. Normally, this would indicate the file is a
+:code:`JPX (JPEG 2000 part 2)` and PRONOM :code:`fmt/151` but Siegfried says this is a :code:`JP2 (JPEG 2000 part 1)`
+with an extension mismatch.
+
+.. code-block:: text
+
+    ---
+    siegfried   : 1.11.0
+    scandate    : 2024-06-12T08:49:11-04:00
+    signature   : default.sig
+    created     : 2023-12-17T15:54:41+01:00
+    identifiers :
+      - name    : 'pronom'
+        details : 'DROID_SignatureFile_V116.xml; container-signature-20231127.xml'
+    ---
+    filename : '/Users/mark.baggett/Downloads/map_cuba_ams_1943.jpf'
+    filesize : 151732610
+    modified : 2024-06-12T08:48:33-04:00
+    errors   :
+    matches  :
+      - ns      : 'pronom'
+        id      : 'x-fmt/392'
+        format  : 'JP2 (JPEG 2000 part 1)'
+        version :
+        mime    : 'image/jp2'
+        class   : 'Image (Raster)'
+        basis   : 'byte match at 0, 23'
+        warning : 'extension mismatch'
+
+**Stack**
+
+* DSPACE (DAMS)
+* SAGE (Delivery)
+* Cantaloupe
+* iRIIIFService
+* Mirador
+
+**Questions and Thoughts**
+
+* Why are these JPFs? Are they JPEG 2000 part 1s or part 2s?
+* Do we have digitization standards for various files and if so where are they?
+* What is the purpose of the KML files? If it's really this simple, shouldn't we just capture in :code:`dcterms:spatial`?
+* This may be a good collection for demoing georeferencing with IIIF.
+
+**IIIF**
+
+* Current: Image, Presentation
+* Future: Image, Presentation, navPlace, `geoReference <https://iiif.io/api/extension/georef/>`_
+

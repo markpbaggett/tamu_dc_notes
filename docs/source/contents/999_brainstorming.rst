@@ -20,3 +20,4 @@ Things to Include / Think About
 * IIIF Change Discovery
 * 3d
 * PDFs, DOCs, and Other Problematic Formats
+* Define Exhibit -- there doesn't seem to be a clear definition of what this means from SAGE to Spotlight
