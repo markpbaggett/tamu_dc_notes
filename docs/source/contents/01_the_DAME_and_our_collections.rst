@@ -1,5 +1,5 @@
-The DAME and Our Collections
-============================
+Environmental Scan
+==================
 
 Collections
 -----------
@@ -884,6 +884,8 @@ are no transcripts or audio descriptions. The audio is in multiple languages.
 Primeros Libros
 ===============
 
+`Homepage <http://oaktrust.library.tamu.edu/handle/1969.1/92213>`_
+
 The Primeros Libros de las Américas: Impresos Americanos del Siglo XVI en las Bibliotecas del Mundo project is a digital
 collection of the first books printed in the Americas before 1601. These monographs are very important because they
 represent the first printing in the New World and provide primary sources for scholarly studies in a variety of academic
@@ -911,12 +913,245 @@ Also, are PDFs split and added to Cantaloupe?
 
 * Does irIIIFService order canvases? Is it random? Is it based on the RDF? Investigate.
 * Are new volumes still being added?
-* What's up with all these JPFs?
-* Does ifIIIFService really split and combine all files (PDFs, JPGs,
+* What's up with all these JPFs? Are there standards for JP2s?
+* Does ifIIIFService really split and combine all files (PDFs, JPGs, JP2s)?
 
+**IIIF**
+
+* Current: None
+* Future: Image, Presentation
+
+===================================
+The Raiford L. Stripling Collection
+===================================
+
+`Homepage <http://oaktrust.library.tamu.edu/handle/1969.1/94833>`_
+
+**Note**: Loaded over HTTP
+
+In the fall of 1927, Raiford L. Stripling (1910-1990) enrolled as a freshman in the department of architecture at the
+Agricultural and Mechanical College of Texas. Under the guidance of Samuel Charles Phelps Vosper and Ernest Langford,
+two distinguished faculty members in the department of architecture, Stripling was schooled in the Beaux Arts tradition,
+which emphasizes classical design, rigorous attention to fine detailing, and sound construction methods. In 1947
+Stripling opened his own practice in his hometown of San Augustine, Texas and over the course of his career he worked on
+some of Texas’ most significant restoration projects, as well as many single family residences, banks, churches, and
+schools. In 1990 Raiford L. Stripling passed away, leaving behind a body of work that will contribute significantly to
+the fields of architecture and architectural history for many years to come. This collection is made up of over 250
+projects contained in 24 boxes, as well as drawings and construction documents housed in flat files in one map case. In
+addition to architectural drawings and blueprints, the collection contains contract documents, correspondence,
+brochures, pamphlets, newspaper articles, magazine articles, photographs, sketches, drawings, and miscellaneous notes.
+
+Almost everything here appears to be JPFs.
+
+**Stack**
+
+* DSPACE
+
+**Questions and Thoughts**
+
+* How does this site work: https://library.tamu.edu/research/digital_collections
+* Who can edit it?
+
+**IIIF**
+
+* Current: None
+* Future: Image, Presentation
+
+=============================================
+Science Fiction and Fantasy Research Database
+=============================================
+
+`Homepage <https://sffrd.library.tamu.edu/site/>`_
+
+The Science Fiction and Fantasy Research Database is an on-line, searchable compilation and extension of Science Fiction and Fantasy Reference Index 1878-1985, Science Fiction and Fantasy Reference Index 1985-1991, and Science Fiction and Fantasy Reference Index 1992-1995, including material located since publication of the last printed volume.
+
+**Stack**
+
+* ???
+
+**Questions and Thoughts**
+
+* Is this in the inventory?
+* Who is the product owner and maintainer?
+
+**IIIF**
+
+* Current: None
+
+=================================================
+The Stephen Powys Marks London Collection, Part 1
+=================================================
+
+`Homepage <https://spotlight.library.tamu.edu/spotlight/london-collection>`_
+
+This exhibit is split into 2 parts. Some of the manifests appear to be broken. Also, this is one of the first Fedora
+collections that seem to have order. For example:
+https://spotlight.library.tamu.edu/spotlight/london-collection/catalog/d46adeb610031a28bf682e4f68817128
+
+An example of a broken manifest is here:
+https://spotlight.library.tamu.edu/spotlight/london-collection/catalog/bd1184d90258f484e41db991934c5559
+
+**Stack**
+
+* Spotlight
+* Fedora
+* Cantaloupe
+* irIIIFService
+
+**Questions and Thoughts**
+
+* What does the structural metadata look like for complex objects?
+* Why are so many manifests broken?
+
+**IIIF**
+
+* Current: Image, Presentation
+* Future: Minimally Image, Presentation
+
+
+=================================================
+The Stephen Powys Marks London Collection, Part 2
+=================================================
+
+`Homepage <https://spotlight.library.tamu.edu/spotlight/london-maps-batch-2>`_
+
+Similar to above, but with what seems to be working manifests.
+
+**Stack**
+
+* Spotlight
+* Fedora
+* Cantaloupe
+* irIIIFService
+
+**Questions and Thoughts**
+
+* Why is this a second part and not linked from homepage?
+
+**IIIF**
+
+* Current: Image, Presentation
+* Future: Minimally Image, Presentation
+
+====================================================
+Texas A&M Forest Service Radio Broadcasts Collection
+====================================================
+
+`Homepage <https://avalon.library.tamu.edu/collections/xp68kg260>`_
+
+The radio programs in this collection were produced between approximately 1946 and 1959 as part of the Cooperative
+Forest Fire Prevention (CFFP) Campaign, a collaboration between the United States Department of Agriculture, the
+Advertising Council, and state forestry services. Vinyl and electric transcription disc were distributed to radio
+station across Texas and the nation. The longest running PSA campaign in U.S. history, the CFFP program introduced the
+Smokey Bear character in the early 1940s.
+
+There are no transcripts or audio descriptions. It all appears to be audio.
+
+**Stack**
+
+* Avalon
+
+**Questions and Thoughts**
+
+* Are assets for Avalon stored in Avalon or somewhere else?
+* Do we not need transcripts of some type.
 
 **IIIF**
 
 * Current: None
 * Future: Presentation
 
+======================================
+Texas A&M University Archived Catalogs
+======================================
+
+`Homepage <https://library.tamu.edu/collections/digital-library/course-catalogs>`_
+
+This archive is a culmination of Texas A&M University catalogs beginning in 1876. The information included in these
+volumes and the way it is presented varies quite a bit, especially in the formative years. The official title for the
+catalogs fluctuates as well; therefore, for archival and searching purposes, these volumes will be referenced as
+University Catalogs and include the academic year.
+
+Looks like all PDFs from DSPACE into SAGE with IIIF.
+
+**Stack**
+
+* DSPACE for assets management
+* Custom Webpage
+* SAGE
+* Cantaloupe
+* irIIIFService
+
+
+**Questions and Thoughts**
+
+* How does irIIIFService split PDFs?
+* How is the custom front end done?
+* How do new items get in?
+
+**IIIF**
+
+* Current: Image, Presentation
+* Future: Image, Presentation
+
+===============================================
+Texas A&M Newspapers and Periodicals Collection
+===============================================
+
+`Homepage <https://library.tamu.edu/collections/digital-library/newspapers.php>`_
+
+The Texas A&M Newspaper Collection offers a window into student life and campus happenings at Texas A&M. The newspapers
+provide a first-hand account of events that impacted student life which occurred on campus as well as from around the
+world.
+
+The landing page is maybe apart of the general website and it points to 3 distinct collections in Open Oni. These use
+a viewer (looks like Open Oni) that supports HOCR or Alto.
+
+It's not clear where assets are stored.
+
+**Stack**
+
+* Custom Webpage
+* OpenOni
+
+**Questions and Thoughts**
+
+* Where are assets stored?
+* How is HOCR or Alto done?
+* What is the content model?
+
+**IIIF**
+
+* Current: None
+* Future: Image, Presentation
+
+=========================================
+Texas A&M University Yearbooks Collection
+=========================================
+
+`Homepage <https://library.tamu.edu/yearbooks/>`_
+
+The Texas A&M University Yearbook Online Collection begins with the initial 1895 Olio publication. The yearbooks begin
+annual publication in 1903 and continue through today. The newer editions are planned to be included on this website in
+future developments. The original yearbooks can be viewed at the Cushing Memorial Library & Archives.
+
+The landing page points at an application driven by the Internet Archive Bookreader. For instance:
+https://bookreader.library.tamu.edu/book.php?id=yb1895&getbook=Go#page/n0/mode/2up
+
+There is HOCR or Alto?
+
+**Stack**
+
+* InternetArchive bookreader
+
+**Questions and Thoughts**
+
+* Where are assets stored?
+* How is HOCR or Alto done?
+* What is the content model?
+* Why IA Bookreader?
+
+**IIIF**
+
+* Current: None
+* Future: Image, Presentation
