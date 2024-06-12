@@ -655,3 +655,193 @@ with an extension mismatch.
 * Current: Image, Presentation
 * Future: Image, Presentation, navPlace, `geoReference <https://iiif.io/api/extension/georef/>`_
 
+======================
+Images of a Rural Past
+======================
+
+`Homepage <https://www.flickr.com/photos/cushinglibrary/collections/72157617092580769/>`_
+
+This collection of historical photographs was acquired in the early 1970s from the Agricultural Communications Office of
+the Texas Agricultural Extension Service. The physical collection consists of nearly 7,000 photographs and a sampling of
+these items have been digitized and made accessible online. The vast majority of the images are black and white and
+range from the 1930s through the late 1970s, although some photographs date from earlier and later periods. The images
+were captured by photographers working throughout the state and document many activities aimed at improving the lives
+and livelihood of rural Texans. Farming, home improvement, livestock raising, and other programs of the Extension
+Service were illustrated and the photographs were retained for educational and publicity initiatives.
+
+The items here are all stored in Flickr. There seems to be plenty of metadata.  Why are these not in a DAMS (are they?)?
+
+**Stack**
+
+* Flickr
+
+**Questions and Thoughts**
+
+* Why are these not in a DAMS?
+* Could we just pull these and the metadata over into a DAMS and serve these easily?
+* Does Special Collections care about this collection?
+
+**IIIF**
+
+* Current: None
+* Future: Minimally Image, Presentation
+
+=================================================
+Index-Catalogue of Medical and Veterinary Zoology
+=================================================
+
+`Homepage <http://oaktrust.library.tamu.edu/handle/1969.1/90524>`_
+
+**Note**: The link to this collection is over HTTP instead of HTTPs.  How can we change this?
+
+The Texas A&M University Medical Sciences Library has partnered with Oklahoma State University Libraries to digitize the
+Index-Catalogue of Medical and Veterinary Zoology, a multilingual periodical published by the US Government Printing
+Office. This historical compendium of the parasitological literature is a key resource of importance to researchers in
+re-emerging diseases and global animal health. The compilation of content began in 1892, and resulted in over 100
+separate publications comprising over 20,000 pages.
+
+It appears that the collection is all PDFs but they are very slow to load from DSPACE. Why? If you must download a
+resource to see it and it takes this long, should we have an alternate viewing method?
+
+**Stack**
+
+* DSPACE
+
+**Questions and Thoughts**
+
+* It appears that the collection is all PDFs but they are very slow to load from DSPACE. Why? If you must download a resource to see it and it takes this long, should we have an alternate viewing method?
+* Are all collections in DSPACE this slow to load? What about image collections?
+
+**IIIF**
+
+* Current: None
+* Future: ?
+
+===============================================================================================================
+Live To Build A Better World: Despair, Survival, and Hope in Science Fiction's Response to Environmental Change
+===============================================================================================================
+
+`Homepage <https://spotlight.library.tamu.edu/spotlight/scifi-exhibit-2021>`_
+
+This digital collection reflects the content of an exhibit presented at Cushing Memorial Library & Archives from January
+- June 2021. Consisting of books, movie posters, and, in one case, an elaborate handcrafted tapestry, the exhibit
+explored many examples of science fiction's reactions to human-caused climate change over the 20th and early 21st
+centuries.
+
+There are 108 items, and this seems to be very exhibit forward. Most of the items are book covers, movie posters, etc.
+
+**Stack**
+
+* Fedora for Digital Assets Management
+* Spotlight for Exhibiting
+* Cantaloupe
+* iRIIIFService
+* Mirador
+
+**Questions and Thoughts**
+
+* ?
+
+**IIIF**
+
+* Current: Image, Presentation
+* Future: Minimally Image, Presentation
+
+============================
+Maps of Brazos County, Texas
+============================
+
+`Homepage <https://library.tamu.edu/discovery/discovery-context/brazos-maps?direction=ASC>`_
+
+This digital collection features maps of Brazos County, the cities of College Station and Bryan, and the campus of Texas
+A&M University. There are 90 total works.
+
+**Stack**
+
+* Fedora for Digital Assets Management
+* SAGE for Exhibiting
+* Cantaloupe
+* iRIIIFService
+* Mirador
+
+**Questions and Thoughts**
+
+* ?
+
+**IIIF**
+
+* Current: Image, Presentation
+* Future: Image, Presentation, navPlace, `geoReference <https://iiif.io/api/extension/georef/>`_
+
+===========================
+The Mina De Malfois Archive
+===========================
+
+`The Mina De Malfois Archive`_
+
+The Mina De Malfois Archive contains stories from “Mina” herself (Carlanime), plus numerous others from fans that
+Carlanime generously allowed to play in her world. Also included are several podcasts, examples of Mina-oriented fan
+art, and pieces of Sanguinity fanfiction. The latter again demonstrates the meta nature of the Minaverse – fanfiction
+about a nonexistent fandom that serves as a satire of existing online fandoms. The thumbnail of Mina was created by and
+is credited to Mute Cornett.
+
+There is a mixture of works here including: PDF, mp3s, and images.  Also, this may be the first collection I've seen
+with creative commons licenses. The badge is displayed and URI is written to :code:`dc.rights.uri`.
+
+**Stack**
+
+* DSPACE
+
+**Questions and Thoughts**
+
+* ?
+
+**IIIF**
+
+* Current: None
+* Future: Image, Presentation
+
+===============================================
+The Minutes of the Houston Oil Company of Texas
+===============================================
+
+`Homepage <https://library.tamu.edu/collections/digital-library/houston-oil-minutes>`_
+
+The Houston Oil Company of Texas was founded by John Henry Kirby in 1901, simultaneously Kirby and his investors founded
+the Kirby Lumber Company. These two companies allowed for dual use of land in East Texas, which was rich in both forest
+and oil. For many years, the Houston Oil Company of Texas developed into the largest corporation in Texas, a distinction
+it retained for many years.
+
+This minute book - one volume, 299 pages - encompasses the first eight years of the corporation’s business.
+
+This is the first exhibit I've seen served from a page like this. It doesn't appear to be SAGE or Spotlight, but instead
+something else entirely.  A mirador viewer is embedded on the landing page with descriptive text about the project.
+
+The project also links to From the Page which is what is being used to aid in Transcription.  While over 30% of this
+seems to be complete, there is a problem. Some images no longer load.  Sometimes the thumbnail will load but the base
+image does not and sometimes both won't load.  Perhaps this is why the crowdsourcing has fallen short here? Weirdly,
+I think some of this used to load though as the transcription is complete.  On further inspection, this looks to be
+caused by the image server response resulting in a 404.  Here is an example:
+
+https://api.library.tamu.edu/iiif/2/6e82108d-0809-305d-a5b8-7b8c1f252f9c/info.json
+
+Also, the reason some of the views look bad is because the image response loads, some tiles / zoom levels load, but most
+return a 404.
+
+How on earth is this being loaded into Cantaloupe? Where are the underlying images?
+
+**Stack**
+
+* Cantaloupe
+* From the Page for Transcription
+
+**Questions and Thoughts**
+
+* Is the same manifest used for delivery and From the page? Is this the source of the fail?
+* How can we get data out of from the page and back into IIIF annotations?
+* The manifest id on the main page has an :code:`id` that doesn't render any canvases.  Whatever is happening here isn't valid and well formed IIIF.
+
+**IIIF**
+
+* Current: Image, Presentation
+* Future: Image, Presentation
