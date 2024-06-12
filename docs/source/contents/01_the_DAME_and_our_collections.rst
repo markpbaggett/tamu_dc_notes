@@ -845,3 +845,78 @@ How on earth is this being loaded into Cantaloupe? Where are the underlying imag
 
 * Current: Image, Presentation
 * Future: Image, Presentation
+
+================
+Owens Folk Music
+================
+
+This collection contains sound recordings made by William A. Owens during the late 1930s to early 1940s, during which
+time he was a professor of English at the Agricultural & Mechanical College of Texas. The recordings document folk
+songs, ballads, play-party songs, fiddle tunes, and folk culture of East and Central Texas. Some of the material was
+later transcribed and published in Owens' books "Texas Folk Music" and "Tell Me a Story, Sing Me a Song..." and are
+noted in item descriptions
+
+Audio CDs transfers of the original disks were made in 2002 by The Cutting Corporation. The recordings are of good
+quality unless noted otherwise.
+
+Please note that some items in this collection contain racially insensitive and offensive language. In an effort to
+represent the resource as accurately as possible, library staff have transcribed the title exactly as it appears on
+the archival material or object.
+
+Items are open. Most are served as "playlists," but it's not clear from the metadata how the parts are related. There
+are no transcripts or audio descriptions. The audio is in multiple languages.
+
+**Stack**
+
+* Avalon
+
+**Questions and Thoughts**
+
+* Is there a requirement for closed captioning or subtitle files?
+* How are the tracks related to the overall work? What was the arrangement based on?
+
+**IIIF**
+
+* Current: None
+* Future: Presentation
+
+===============
+Primeros Libros
+===============
+
+The Primeros Libros de las Américas: Impresos Americanos del Siglo XVI en las Bibliotecas del Mundo project is a digital
+collection of the first books printed in the Americas before 1601. These monographs are very important because they
+represent the first printing in the New World and provide primary sources for scholarly studies in a variety of academic
+fields. Of the 220 editions believed to have been produced in Mexico and 20 in Peru, approximately 155 are represented
+in institutions around the world.
+
+Only some of the works (34) have associated files. When a work has files, there appears to be a mixture of JP2s (as JPFs)
+and jpgs along with a corresponding PDF.
+
+Here is a `sample work <https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https%3A%2F%2Fapi.library.tamu.edu%2Fiiif-service%2Fdspace%2Fpresentation%2F1969.1%2F94147>`_.
+
+Is the order here correct? Have I assumed books from DSPACE are sequenced properly?
+
+Also, are PDFs split and added to Cantaloupe?
+
+`Here is a list of all works with files. <https://oaktrust.library.tamu.edu/handle/1969.1/92213/discover?filtertype=has_content_in_original_bundle&filter_relational_operator=equals&filter=true>`_
+
+`Here is the corresponding ttl for the item above. <https://oaktrust.library.tamu.edu/rdf/handle/1969.1/94147>`_
+
+**Stack**
+
+* DSPACE
+
+**Questions and Thoughts**
+
+* Does irIIIFService order canvases? Is it random? Is it based on the RDF? Investigate.
+* Are new volumes still being added?
+* What's up with all these JPFs?
+* Does ifIIIFService really split and combine all files (PDFs, JPGs,
+
+
+**IIIF**
+
+* Current: None
+* Future: Presentation
+
