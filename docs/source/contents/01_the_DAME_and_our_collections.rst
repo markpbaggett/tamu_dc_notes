@@ -1155,3 +1155,228 @@ There is HOCR or Alto?
 
 * Current: None
 * Future: Image, Presentation
+
+=====================
+Texas Data Repository
+=====================
+
+`Homepage <https://dataverse.tdl.org/dataverse/tamu>`_
+
+Dataverse instance provided by Texas Digital Library for Datasets.
+
+Shared instance with TAMU portal.
+
+
+**Stack**
+
+* Dataverse
+
+**Questions and Thoughts**
+
+* Who is product owner?
+* How long are datasets kept for?
+* Open and restricted data?
+
+**IIIF**
+
+* Current: None
+* Future: None
+
+========================================================
+A Time of Resolve: Texas A&M during the Great Depression
+========================================================
+
+"A Time of Resolve: Texas A&M during the Great Depression," was an exhibit at Texas A&M's Cushing Memorial Library and
+Archives that ran September 7, 2018 through February 22, 2019.
+
+There are 140 items.  Some manifests aren't working correctly like:
+https://library.tamu.edu/discovery/discovery-context/time-of-resolve/aHR0cHM6Ly9hcGkubGlicmFyeS50YW11LmVkdS9mY3JlcG8vcmVzdC8zYi82Zi9jMy8yNS8zYjZmYzMyNS1mNmNhLTQxZDgtYjkxZS04YzVkYjNiZThjMTMvdGltZV9vZl9yZXNvbHZlX29iamVjdHMvMg==
+
+**Stack**
+
+* Fedora for Assets Management
+* SAGE for display
+* Cantaloupe
+* irIIIFService
+
+**Questions and Thoughts**
+
+* What's up with Fedora and bad manifests?
+
+**IIIF**
+
+* Current: Image, Presentation
+* Future: Image, Presentation
+
+=================================================================================
+Toward a Better Living: African American Farming Communities in Mid-Century Texas
+=================================================================================
+
+`Homepage <http://oaktrust.library.tamu.edu/handle/1969.1/91004>`_
+
+This collection of historical photographs was acquired in the early 1970s from the Agricultural Communications Office
+of the Texas Agricultural Extension Service. The physical collection, housed in Cushing Memorial Library & Archives,
+consists of nearly 7,000 photographs. This subset of the collection illustrates African American farming and community
+life in Texas from the early 1930s through 1960s. The vast majority of the images are in black and white and document
+activities such as farming, home improvement, livestock raising, and other programs of the Extension Service.
+
+All images.
+
+**Stack**
+
+* DSPACE
+* IIPMooviewer
+* Djatoka
+
+**Questions and Thoughts**
+
+* ?
+
+**IIIF**
+
+* Current: None?
+* Future: Image, Presentation
+
+============================
+Vascular Plant Image Gallery
+============================
+
+`Homepage <http://oaktrust.library.tamu.edu/handle/1969.1/97046>`_
+
+This is an archive of images from the Vascular Plant Image Library built by the now defunct Texas A&M Bioinformatics
+Working Group. There are over 10000 works and no viewer.
+
+**Stack**
+
+* DSPACE
+
+**Questions and Thoughts**
+
+* There is no RDF so no manifest. Is this in other collections where Djatoka, IIPMooViewer are used?
+* What from DSPACE gets RDF?
+
+**IIIF**
+
+* Current: None?
+* Future: Image, Presentation
+
+======================
+Veterans of the Valley
+======================
+
+`Homepage <https://avalon.library.tamu.edu/collections/5999n359j>`_
+
+Veterans of the Valley” is a collection of 140 interviews and preparatory materials created for the KAMU-TV produced
+and aired television series of the same name. Created by host Tom Turbiville at WTAW radio as “Bravo Brazos Valley,”
+“Veterans of the Valley” was developed in 2004 at the request of KAMU-TV’s Jon Bennett and co-produced by Kyle
+Netterville at KAMU-TV’s studio on the Texas A&M University, College Station campus. The collection was donated to
+Cushing Memorial Library and Archives in 2017 by Turbiville with the knowledge and understanding from KAMU that the
+materials would be made publicly available.
+
+These are open, but there are no captions or transcripts.
+
+**Stack**
+
+* Avalon
+
+**Questions and Thoughts**
+
+* Where are assets managed?
+* Should we add captions?
+* How do we get them in to Avalon
+
+**IIIF**
+
+* Current: None?
+* Future: Presentation
+
+==================
+Wheelan Collection
+==================
+
+`Homepage <http://oaktrust.library.tamu.edu/handle/1969.1/590>`_
+
+Wheelan was one of a legion of newspaper and magazine reporters and photographers who covered the Mexican Revolution. He
+probably arrived in Northern Mexico early in the winter of 1913-1914. The main attraction was General Francisco (Pancho)
+Villa, who held Ciudad Juarez, just across the Rio Grande from El Paso, Texas. By this time Villa had the reputation of
+being the most able military commander among the Constitutionalists, a coalition of revolutionaries in rebellion against
+the provisional government of General Victoriano Huerta. In February, 1913, Huerta had conspired in the overthrow of the
+constitutionally elected government of President Francisco Madero. Villa, a devout supporter of Madero, was one of
+several leaders in Northern Mexico who were fighting for the restoration of constitutional government and for
+revolutionary reforms.
+
+**Stack**
+
+* DSPACE
+* Djatoka
+* IIPMoo Viewer
+
+**Questions and Thoughts**
+
+* There is no RDF so no manifest. Is this in other collections where Djatoka, IIPMooViewer are used?
+* What from DSPACE gets RDF?
+
+**IIIF**
+
+* Current: None?
+* Future: Image, Presentation
+
+=======================================================================================
+"Who in the world am I? Ah, that's the great puzzle!": The Faces of Alice in Wonderland
+=======================================================================================
+
+`Homepage <https://spotlight.library.tamu.edu/spotlight/alice-in-wonderland>`_
+
+This exhibit features images of Alice from artists all over the world, starting with Alice's original illustrator Sir
+John Tenniel. Alice may be a single little girl, but she wears many faces and many bodies. A variety of artists have
+interpreted Alice and Carroll's other characters in different styles, using different imagery, and with different themes
+and motivations. It's a particularly fitting situation for Alice, who repeatedly has her identity questioned (not least
+by herself) throughout the books.
+
+There are 27 works and 2 slideshows.
+
+**Stack**
+
+* Spotlight
+* Fedora
+* Mirador
+* Cantaloupe
+
+**Questions and Thoughts**
+
+* How are the slideshows created? Could they be IIIF Collections
+
+**IIIF**
+
+* Current: Image, Presentation
+* Future: Image, Presentation
+
+=====================
+World War I Postcards
+=====================
+
+`Homepage <https://library.tamu.edu/discovery/discovery-context/wwi-postcards?direction=ASC>`_
+
+This digital collection contains World War I era postcards held in the Cooper K. Ragan Military Collection at Cushing
+Memorial Library & Archives.
+
+There are fronts and backs but there doesn't appear to be an order.
+
+**Stack**
+
+* Spotlight
+* DSPACE
+* Mirador
+* Cantaloupe
+* irIIIFService
+
+**Questions and Thoughts**
+
+* Is there a way to order things from DSPACE?
+* How come order doesn't match the turtle?
+
+**IIIF**
+
+* Current: Image, Presentation
+* Future: Image, Presentation
+
