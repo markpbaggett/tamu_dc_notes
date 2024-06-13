@@ -19,18 +19,25 @@ Initial Priorities
     - When does something go to Avalon
     - If something is delivered with something else (Cervantes, IA Bookreader), where are files and works managed
     - Are OpenONI / Avalon files stored directly in those platforms
+- Understand Current Landscape and Microservices that make up the DAME
+    - What gets a graph in Fuseki and DSPACE
+        - `Cushing Exhibition Catalogs <https://oaktrust.library.tamu.edu/rdf/handle/1969.1/160506>`_ (collection with graph)
+        - `Primeros Liberos <https://oaktrust.library.tamu.edu/rdf/handle/1969.1/92213>`_ (collection no graph)
+        - Any Djatoka driven resource (no graph)
+    - Figure out how ordering of canvases work from both DSPACE and Fedora
+        - `Fedora example <https://spotlight.library.tamu.edu/spotlight/london-collection/catalog/d46adeb610031a28bf682e4f68817128>`_
+        - `DSPACE <https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https%3A%2F%2Fapi.library.tamu.edu%2Fiiif-service%2Fdspace%2Fpresentation%2F1969.1%2F94147>`_
+    - What collections exist and how do they work
+    - Understand and document how Solr is implemented for Collections and Works
+        - Document
+    - Understand OAI-PMH and where it's available
 - Increase accessibility, usability, and discoverability of collections
     - Create plan to add closed captioning for existing video collections
     - Create transcripts / audio descriptions for existing audio collections
     - Determine pathway and document how to get transcriptions from From the Page
     - Document existing content models and how IIIF presentation is informed
     - Collaborate with stakeholders and developers to document needs and content models for new works
-    - Figure out how ordering of canvases work from both DSPACE and Fedora
-        - `Fedora example <https://spotlight.library.tamu.edu/spotlight/london-collection/catalog/d46adeb610031a28bf682e4f68817128>`_
-        - `DSPACE <https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https%3A%2F%2Fapi.library.tamu.edu%2Fiiif-service%2Fdspace%2Fpresentation%2F1969.1%2F94147>`_
-    - Understand and document how Solr is implemented for Collections and Works
-        - Document
-        - Propose a single search interface based on underlying Solr
+    - Propose a single search interface based on underlying Solr
     - Understand OAI-PMH and where it's available
     - Advocate for `Implementation of FAIRiCat <https://signposting.org/FAIRiCat/>`_ where possible
 - Increase trust in Digital Collections platforms

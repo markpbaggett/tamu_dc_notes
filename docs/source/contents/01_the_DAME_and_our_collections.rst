@@ -1,8 +1,5 @@
-Environmental Scan
-==================
-
-Collections
------------
+Environmental Scan: Collections
+===============================
 
 =========================================================================
 150 Years and Counting: Celebrating 150 Years of the City of Bryan, Texas
