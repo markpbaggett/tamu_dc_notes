@@ -173,7 +173,6 @@ be switched to HTTPS.
 **Questions**
 
 * What does the dataset look like?
-* Why is that in OakTrust if the other files are in Fedora?
 
 **IIIF**
 
