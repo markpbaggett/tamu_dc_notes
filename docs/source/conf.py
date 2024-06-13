@@ -8,7 +8,7 @@
 import sphinx_rtd_theme
 
 
-project = 'Towards a IIIF Centered DAME'
+project = 'Towards an Interoperable, Accessible, and Discoverable DAME'
 copyright = '2024, Mark Baggett'
 author = 'Mark Baggett'
 

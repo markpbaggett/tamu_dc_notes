@@ -3,10 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Towards a IIIF Centered DAME
-============================
+Towards an Interoperable, Accessible, and Discoverable DAME
+===========================================================
 
-This portal contains information about batch registration of DOIs in Crossref at the University of Tennessee.
+This portal contains initial thoughts for Digital Collections work at Texas A&M University.
 
 .. toctree::
    :maxdepth: 1
