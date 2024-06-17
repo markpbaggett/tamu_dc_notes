@@ -28,6 +28,7 @@ Initial Priorities
         - `Fedora example <https://spotlight.library.tamu.edu/spotlight/london-collection/catalog/d46adeb610031a28bf682e4f68817128>`_
         - `DSPACE <https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https%3A%2F%2Fapi.library.tamu.edu%2Fiiif-service%2Fdspace%2Fpresentation%2F1969.1%2F94147>`_
     - What collections exist and how do they work
+    - What are the microservices and how do they work together
     - Understand and document how Solr is implemented for Collections and Works
         - Document
     - Understand OAI-PMH and where it's available
