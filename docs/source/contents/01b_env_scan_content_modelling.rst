@@ -123,7 +123,7 @@ This is a graph of an Object according to CAP. Some notes:
 
     @prefix pcdm: <http://pcdm.org/models#> .
     @prefix fedora-repo: <http://fedora.info/definitions/v4/repository#> .
-    @prefix iana: <http://www.iana.org/assignments/relation/first> .
+    @prefix iana: <http://www.iana.org/assignments/relation/> .
     @prefix ldp: <http://www.w3.org/ns/ldp#> .
     @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
     @prefix pcdm: <http://pcdm.org/models#> .
@@ -274,4 +274,249 @@ Children here are different in that they point to CAP URIs rather than graphs.
         ldp:membershipResource <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection>;
         ldp:insertedContentRelation ore:proxyFor ;
         ldp:hasMemberRelation pcdm:hasMember .
+
+================================================
+Child of "Stephen_Powys_Marks_London_Collection"
+================================================
+
+**Children**:
+
+* :code:`https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection/members/10Proxy`
+
+.. code-block:: turtle
+
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix fedora-repo: <http://fedora.info/definitions/v4/repository#> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix tamu-repo: <https://api.library.tamu.edu/fcrepo/rest/> .
+    @prefix ore: <http://www.openarchives.org/ore/terms#> .
+
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection/members> a ldp:Container, ldp:IndirectContainer, fedora-repo:Resource, pcdm:Object, ldp:RDFSource, fedora-repo:Container ;
+        fedora-repo:createdBy "fedoraAdmin" ;
+        fedora-repo:created "fedoraAdmin", "08-25-22 11:37 AM" ;
+        fedora-repo:writeable "true" ;
+        fedora-repo:lastModifiedBy "fedoraAdmin" ;
+        fedora-repo:lastModified "08-25-22 11:37 AM", "fedoraAdmin" ;
+        ldp:membershipResource <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection> ;
+        ldp:insertedContentRelation ore:proxyFor ;
+        ldp:hasMemberRelation pcdm:hasMember .
+
+======================
+Child Proxy of Members
+======================
+
+**Children**:
+
+* None
+
+.. code-block:: turtle
+
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix fedora-repo: <http://fedora.info/definitions/v4/repository#> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix tamu-repo: <https://api.library.tamu.edu/fcrepo/rest/> .
+    @prefix ore: <http://www.openarchives.org/ore/terms#> .
+
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection/members/10Proxy> a ldp:RDFSource, fedora-repo:Container, pcdm:Object, fedora-repo:Resource, ldp:Container ;
+        ore:proxyFor <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10> ;
+        fedora-repo:createdBy "fedoraAdmin" ;
+        fedora-repo:created "fedoraAdmin", "08-25-22 11:37 AM" ;
+        fedora-repo:writeable "true" ;
+        fedora-repo:lastModifiedBy "fedoraAdmin" ;
+        fedora-repo:lastModified "08-25-22 11:37 AM", "fedoraAdmin" .
+
+=========
+An object
+=========
+
+**Children**:
+
+* :code:`https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/orderProxies`
+* :code:`https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages`
+
+.. code-block:: turtle
+
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix fedora-repo: <http://fedora.info/definitions/v4/repository#> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix tamu-repo: <https://api.library.tamu.edu/fcrepo/rest/> .
+    @prefix ore: <http://www.openarchives.org/ore/terms#> .
+    @prefix iana: <http://www.iana.org/assignments/relation/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+    @prefix dce: <http://purl.org/dc/elements/1.1/> .
+
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10> a pcdm:Object, ldp:RDFSource, fedora-repo:Resource, ldp:Container, fedora-repo:Container ;
+        fedora-repo:createdBy "fedoraAdmin" ;
+        fedora-repo:created "fedoraAdmin", "08-25-22 11:37 AM" ;
+        fedora-repo:writeable "true" ;
+        fedora-repo:lastModifiedBy "fedoraAdmin" ;
+        fedora-repo:lastModified "08-25-22 11:37 AM", "fedoraAdmin" ;
+        iana:first <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/orderProxies/page_0_proxy> ;
+        iana:last <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/orderProxies/page_28_proxy> ;
+        pcdm:hasMember <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_21>, <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_18>, <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_25>, <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_1>, <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_6>, <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_27>, <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_13> ;
+        dce:publisher "London, J. Taylor", "DIGITAL: Cushing Memorial Library and Archives" ;
+        dce:format "Reformatted digital" ;
+        dce:subject "Architecture--England--London", London (England)--Description and travel", "NA970 .B8 1825" ;
+        dce:title "Illustrations of the public buildings of London; with historical and descriptive accounts of each edifice" ;
+        dce:rights "https://rightsstatements.org/page/NoC-US/1.0/?language=en" ;
+        dce:description "Two volumes published between 1825 and 1828; Added title-pages, engravings." ;
+        dce:creator "Britton, John (1771-1857)" ;
+        dce:language "en" ;
+        dce:type "Map" ;
+        dcterms:medium "Electronic" ;
+        dcterms:extent "2 volumes : illustrations, plates, map ; 23 centimeters" ;
+        dcterms:isPartOf "Stephen Powys Marks London Collection" ;
+        dcterms:created "1825" .
+
+============
+orderProxies
+============
+
+**Children**:
+
+* :code:`https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/orderProxies/page_0_proxy`
+
+.. code-block:: turtle
+
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix fedora-repo: <http://fedora.info/definitions/v4/repository#> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix tamu-repo: <https://api.library.tamu.edu/fcrepo/rest/> .
+    @prefix ore: <http://www.openarchives.org/ore/terms#> .
+    @prefix iana: <http://www.iana.org/assignments/relation/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+    @prefix dce: <http://purl.org/dc/elements/1.1/> .
+
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/orderProxies > a ldp:RDFSource, fedora-repo:Container, ldp:Container, ldp:DirectContainer, fedora-repo:Resource, pcdm:Object ;
+        fedora-repo:createdBy "fedoraAdmin" ;
+        fedora-repo:created "fedoraAdmin", "08-25-22 11:37 AM" ;
+        fedora-repo:writeable "true" ;
+        fedora-repo:lastModifiedBy "fedoraAdmin" ;
+        fedora-repo:lastModified "08-25-22 11:37 AM", "fedoraAdmin" ;
+        ldp:isMemberOfRelation ore:proxyIn ;
+        ldp:membershipResource <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10> ;
+
+==========
+page proxy
+==========
+
+**Children**:
+
+* None
+
+.. code-block:: turtle
+
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix fedora-repo: <http://fedora.info/definitions/v4/repository#> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix tamu-repo: <https://api.library.tamu.edu/fcrepo/rest/> .
+    @prefix ore: <http://www.openarchives.org/ore/terms#> .
+    @prefix iana: <http://www.iana.org/assignments/relation/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+    @prefix dce: <http://purl.org/dc/elements/1.1/> .
+
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/orderProxies/page_0_proxy> a pcdm:Object, ldp:RDFSource, fedora-repo:Resource, ldp:Container, fedora-repo:Container ;
+        fedora-repo:createdBy "fedoraAdmin" ;
+        fedora-repo:created "fedoraAdmin", "08-25-22 11:37 AM" ;
+        fedora-repo:writeable "true" ;
+        fedora-repo:lastModifiedBy "fedoraAdmin" ;
+        ore:proxyFor <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_0> ;
+        ore:proxyIn <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10> .
+
+
+=====
+pages
+=====
+
+**Children**:
+
+* :code:`https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_0`
+* :code:`https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_1`
+
+.. code-block:: turtle
+
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix fedora-repo: <http://fedora.info/definitions/v4/repository#> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix tamu-repo: <https://api.library.tamu.edu/fcrepo/rest/> .
+    @prefix ore: <http://www.openarchives.org/ore/terms#> .
+    @prefix iana: <http://www.iana.org/assignments/relation/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+    @prefix dce: <http://purl.org/dc/elements/1.1/> .
+
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages> a fedora-repo:Container, ldp:RDFSource, ldp:Container, ldp:DirectContainer, fedora-repo:Resource, pcdm:Object ;
+        fedora-repo:createdBy "fedoraAdmin" ;
+        fedora-repo:created "fedoraAdmin", "08-25-22 11:37 AM" ;
+        fedora-repo:writeable "true" ;
+        fedora-repo:lastModifiedBy "fedoraAdmin" ;
+        ldp:hasMemberRelation pcdm:hasMember ;
+        ldp:membershipResource <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10> .
+
+==============
+page with File
+==============
+
+**Children**:
+
+* :code:`https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_1/files`
+
+.. code-block:: turtle
+
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix fedora-repo: <http://fedora.info/definitions/v4/repository#> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix tamu-repo: <https://api.library.tamu.edu/fcrepo/rest/> .
+    @prefix ore: <http://www.openarchives.org/ore/terms#> .
+    @prefix iana: <http://www.iana.org/assignments/relation/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+    @prefix dce: <http://purl.org/dc/elements/1.1/> .
+
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_1> a pcdm:Object, ldp:RDFSource, fedora-repo:Resource, fedora-repo:Container, ldp:Container ;
+        fedora-repo:createdBy "fedoraAdmin" ;
+        fedora-repo:created "fedoraAdmin", "08-25-22 11:37 AM" ;
+        fedora-repo:writeable "true" ;
+        fedora-repo:lastModifiedBy "fedoraAdmin" ;
+        ldp:hasMemberRelation pcdm:hasMember ;
+        pcdm:hasFile <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_1/files/londonmaps_2858014_01.tif> .
+
+======
+A File
+======
+
+Files has a Resource instead of Children in CAP.
+
+.. code-block:: turtle
+
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix fedora-repo: <http://fedora.info/definitions/v4/repository#> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix tamu-repo: <https://api.library.tamu.edu/fcrepo/rest/> .
+    @prefix ore: <http://www.openarchives.org/ore/terms#> .
+    @prefix iana: <http://www.iana.org/assignments/relation/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+    @prefix dce: <http://purl.org/dc/elements/1.1/> .
+
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_1/files> a ldp:RDFSource, fedora-repo:Container, ldp:Container, ldp:DirectContainer, pcdm:Object, fedora-repo:Resource ;
+        fedora-repo:createdBy "fedoraAdmin" ;
+        fedora-repo:created "fedoraAdmin", "08-25-22 11:37 AM" ;
+        fedora-repo:writeable "true" ;
+        fedora-repo:lastModifiedBy "fedoraAdmin" ;
+        ldp:hasMemberRelation pcdm:hasMember ;
+        ldp:membershipResource <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_1> .
 
