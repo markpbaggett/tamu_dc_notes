@@ -13,6 +13,9 @@ For items with the concept of "Children", a note with an example is included in 
 Charting Texas
 --------------
 
+Charting Texas is a collection in Fedora that does not seem to have multiple canvases.  This is added for comparisons to
+a collection with works with multiple canvases.
+
 ==========
 Collection
 ==========
@@ -204,3 +207,71 @@ A "pages"
         fedora-repo:lastModified "08-25-22 11:37 AM", "fedoraAdmin" ;
         ldp:membershipResource <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/charting-texas_objects/10> ;
         ldp:hasMemberRelation pcdm:hasMember .
+
+Stephen Powys Marks London Collection
+-------------------------------------
+
+Stephen Powys Marks London Collection is a collection in Fedora that has works with multiple canvases.  This is added
+for comparison to a collection without works with multiple canvases.
+
+=====================================
+Stephen_Powys_Marks_London_Collection
+=====================================
+
+This collection is interesting as it an `Stephen_Powys_Marks_London_Collection_objects` are direct descendants of the
+Cushing Collections.
+
+**Children**:
+
+* :code:`https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection/members`
+
+.. code-block:: turtle
+
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix fedora-repo: <http://fedora.info/definitions/v4/repository#> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix tamu-repo: <https://api.library.tamu.edu/fcrepo/rest/> .
+    @prefix ore: <http://www.openarchives.org/ore/terms#> .
+
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection> a fedora-repo:Container, ldp:Container, ldp:RDFSource, pcdm:Object, fedora-repo:Resource ;
+        fedora-repo:createdBy "fedoraAdmin" ;
+        fedora-repo:created "fedoraAdmin", "08-25-22 11:37 AM" ;
+        fedora-repo:writeable "true" ;
+        fedora-repo:lastModifiedBy "fedoraAdmin" ;
+        fedora-repo:lastModified "08-25-22 11:37 AM", "fedoraAdmin" ;
+        pcdm:hasMember <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/5> .
+
+=============================================
+Stephen_Powys_Marks_London_Collection_objects
+=============================================
+
+Like, Stephen_Powys_Marks_London_Collection, this is a direct descendant of Cushing Collections.
+
+Children here are different in that they point to CAP URIs rather than graphs.
+
+**Children**:
+
+* :code:`https://library.tamu.edu/cap/rv/Production-Fedora?context=3b%2F6f%2Fc3%2F25%2F3b6fc325-f6ca-41d8-b91e-8c5db3be8c13%2FStephen_Powys_Marks_London_Collection_objects%2F4`
+
+.. code-block:: turtle
+
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix fedora-repo: <http://fedora.info/definitions/v4/repository#> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix tamu-repo: <https://api.library.tamu.edu/fcrepo/rest/> .
+    @prefix ore: <http://www.openarchives.org/ore/terms#> .
+
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects> a fedora-repo:Container, ldp:Container, ldp:IndirectContainer, pcdm:Object, fedora-repo:Resource, ldp:RDFSource ;
+        fedora-repo:createdBy "fedoraAdmin" ;
+        fedora-repo:created "fedoraAdmin", "08-25-22 11:37 AM" ;
+        fedora-repo:writeable "true" ;
+        fedora-repo:lastModifiedBy "fedoraAdmin" ;
+        fedora-repo:lastModified "08-25-22 11:37 AM", "fedoraAdmin" ;
+        ldp:membershipResource <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection>;
+        ldp:insertedContentRelation ore:proxyFor ;
+        ldp:hasMemberRelation pcdm:hasMember .
+
