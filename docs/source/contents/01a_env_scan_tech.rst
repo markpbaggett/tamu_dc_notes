@@ -72,3 +72,29 @@ supports images. IIIF Presentation 3.0 allows resources to include AV.  For inst
 Like with images, there are many IIIF viewers that support video.  For instance, here is:
 
 * `A video work from my previous institution with closed captioning in Spanish and English and segmented interview questions <https://ramp.avalonmediasystem.org/?iiif-content=https://digital.lib.utk.edu/assemble/manifest/rfta/168>`_
+
+Ideally, all works served via digital collections would have a corresponding manifest that is informed by its work type.
+Doing so ensures the best presentation of our resources and encourages the reuse of digital collections in research and
+other creative activity. It also allows us to easily reuse an asset from any digital collection in an exhibit.
+
+For instance, let's look at the Galston Studienbuch exhibit from my previous institution by clicking the
+:code:`Explore the Volume` button and launching the modal.
+
+.. raw:: html
+
+   <iframe src="https://exhibits.lib.utk.edu/galston/" width="750" height="600"></iframe>
+
+These are annotations added by researchers that allow users to explore the multiple Works and see specific information.
+This helps tell an important story about this unique collection and does so without changing the underlying work.
+
+Additionally, let's look at the `Letter, Dom Lynch in New York N.Y. to Ebenzer Hazard.,1793 July 5 <https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https%3A%2F%2Fdigital.lib.utk.edu%2Fassemble%2Fmanifest%2Finsurancena%2F181>`_.
+This resource has accompanying annotations of the handwritten text that is searchable and displayable.
+
+======
+IRIIIF
+======
+
+A Spring backend for the Institutional Repository International Image Interoperability Framework (IRIIIF) Service
+developed and maintained by Texas A&M University Libraries. This service provides IIIF manifest generation from DSpace
+RDF and/or Fedora PCDM.
+
