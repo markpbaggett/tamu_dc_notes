@@ -1,3 +1,74 @@
-Environmental Scan: Microservices and Technology
-================================================
+Environmental Scan: Services and Technology
+===========================================
 
+About
+-----
+
+This document attempts to define and document the various services that inform the workings of the digital library.
+
+While specific microservices may be covered or explored, this document attempts to center on the functions of the
+various software rather than the software themselves.
+
+IIIF Image
+----------
+
+The `IIIF (International Image Interoperability Framework) Image Service <https://iiif.io/api/image/3.0/>`_ is a
+standard and a set of APIs designed to facilitate the sharing, accessing, and viewing of images from various
+repositories in a consistent and interoperable way. It provides a standard API for accessing image content, which allows
+different systems to retrieve images in a consistent manner and supports dynamic delivery of images, enabling users to
+request images at different sizes, qualities, and formats without needing to store multiple versions of the same image.
+
+While the API has many features, its most important features and purposes are related to image manipulation,
+interoperability, deep zooming, and scalability and efficiency.
+
+Currently, we use `Cantaloupe <https://cantaloupe-project.github.io/>`_ as our IIIF Image Server. It is available
+online `here <https://api.library.tamu.edu/iiif/2/>`_. Our image server uses IIIF Image 2.0 and adheres to level 2 of
+the specification.  While level 2 is not complete, it is defined as desirable. Currently, Cantaloupe serves images from
+Fedora and DSPACE.
+
+The most important outcome of an image server is that it adheres to the things defined in its response in a performant
+way.
+
+Here are the results of several requests and processing times with an image from DSPACE.
+
+* `Get image response <https://api.library.tamu.edu/iiif/2/6d8552af-83dd-3897-846b-aa71695e36bc/info.json>`_: 58 milliseconds
+* `Get full image as jpg on largest size <https://api.library.tamu.edu/iiif/2/6d8552af-83dd-3897-846b-aa71695e36bc/full/full/0/default.jpg>`_: 4.36 seconds
+* `Get next lower resolution version <https://api.library.tamu.edu/iiif/2/6d8552af-83dd-3897-846b-aa71695e36bc/full/1108,/0/default.jpg>`_: 3.54 seconds
+* `Get mid <https://api.library.tamu.edu/iiif/2/6d8552af-83dd-3897-846b-aa71695e36bc/full/554,/0/default.jpg>`_: 2.00 seconds
+* `Get lowest in original state <https://api.library.tamu.edu/iiif/2/6d8552af-83dd-3897-846b-aa71695e36bc/full/69,/0/default.jpg>`_: 1.47 seconds
+* `Grab full image with 516 width, rotate it 90 degrees, return as GIF <https://api.library.tamu.edu/iiif/2/ddabcc96-0637-38ba-b2fe-0baf58efa8b0/full/516,/90/default.gif>`_: 1.93 seconds
+* `Grab full image, rotate it 180 degrees, return as PNG, and grayscale <https://api.library.tamu.edu/iiif/2/6d8552af-83dd-3897-846b-aa71695e36bc/full/full/180/gray.png>`_: 6.16 seconds
+* `Grab image at 50 pct <https://api.library.tamu.edu/iiif/2/6d8552af-83dd-3897-846b-aa71695e36bc/full/pct:50/0/default.jpg>`_: 3.24 seconds
+* `Grab a small region <https://api.library.tamu.edu/iiif/2/6d8552af-83dd-3897-846b-aa71695e36bc/10,75,75,800/full/0/default.jpg>`_: 1.45 seonds
+
+IIIF Presentation
+-----------------
+
+The IIIF (International Image Interoperability Framework) `Presentation API <https://iiif.io/api/presentation/3.0/>`_ is
+a specification designed to enable the structured presentation of digital objects in a way that supports rich user
+interactions and interoperability between different systems. The API supports advanced viewing capabilities, such as
+zooming, panning, and page-turning and builds upon the IIIF Image API to do this. While primarily focused on images, the
+IIIF Presentation API can also support other media types, such as audio and video, enabling the presentation of diverse
+digital objects. It is also designed to integrate with the W3C Web Annotation framework so that resources can be annotated
+and displayed to tell unique stories about a work.
+
+IIIF Presentation is enabled by a manifest that describes how a viewer should display a work. Because the API is interoperable,
+IIIF viewers are interchangeable.  For instance, here is the :code:`Geological Survey (United States)` manifest from our
+repository in 4 different viewers:
+
+* `Clover <https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https%3A%2F%2Fapi.library.tamu.edu%2Fiiif-service%2Fdspace%2Fpresentation%2F1969.1%2F2808>`_
+* `Mirador <https://projectmirador.org/embed/?iiif-content=https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/2808>`_
+* `Universal Viewer <https://uv-v3.netlify.app/#?c=&m=&s=&cv=&manifest=https%3A%2F%2Fapi.library.tamu.edu%2Fiiif-service%2Fdspace%2Fpresentation%2F1969.1%2F2808&xywh=-391%2C-116%2C2558%2C2309>`_
+* `Glycerine <https://demo.viewer.glycerine.io/viewer?iiif-content=https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/2808>`_
+
+IIIF Presentation and manifests are provided by `IRIIIFService <https://github.com/TAMULib/IRIIIFService>`_. This application
+works with resources hosted in either DSPACE or Fedora and adheres to IIIF Presentation 2.0. This version of the API only
+supports images. IIIF Presentation 3.0 allows resources to include AV.  For instance, here is:
+
+* `An audio work with a transcript from my previous institution <https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https://digital.lib.utk.edu/assemble/manifest/wwiioh/2248>`_
+* `A video work with a closed captioning in Spanish and English from my previous institution <https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https://digital.lib.utk.edu/assemble/manifest/rfta/168>`_
+* `A compound work from my previous institution with an image in the first canvas and a video with closed captions in the second canvas <https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https://digital.lib.utk.edu/assemble/manifest/rftaart/75>`_
+
+Like with images, there are many IIIF viewers that support video.  For instance, here is:
+
+* `A video work from my previous institution with closed captioning in Spanish and English and segmented interview questions <https://ramp.avalonmediasystem.org/?iiif-content=https://digital.lib.utk.edu/assemble/manifest/rfta/168>`_
