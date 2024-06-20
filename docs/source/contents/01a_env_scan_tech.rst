@@ -94,7 +94,19 @@ This resource has accompanying annotations of the handwritten text that is searc
 IRIIIF
 ======
 
-A Spring backend for the Institutional Repository International Image Interoperability Framework (IRIIIF) Service
-developed and maintained by Texas A&M University Libraries. This service provides IIIF manifest generation from DSpace
-RDF and/or Fedora PCDM.
+IRIIIF is a Spring backend for the Institutional Repository International Image Interoperability Framework (IRIIIF) Service
+developed and maintained by Texas A&M University Libraries. This service provides IIIF manifest generation for works in
+OakTrust and from Fedora. IRIIIF supports single and multicanvased works, but since it is based of IIIF Presentation v2,
+does not support AV.
 
+One interesting thing that this service seems to be able to do is build canvases in a manifest from pages in a PDF. This
+means that an ETD and other PDF works should be able to be served in a IIIF viewer with a modern viewing experience.
+
+Redis is used for manifest cache and resource URL caching. There are still many things I need to learn about this service
+including:
+
+1. When a Manifest is generated, how long is it cached for in Redis?
+2. Can a Manifest be regenerated on demand via a HTTP get parameter ( :code:`?update=true` )?
+3. How are manifests from DSPACE RDF informed? For instance, how does IRIIIF know sequence order?
+4. Does IRIIIF assume all files on a work need to be delivered as canvases? In other words, if a work has a PDF, jp2s, and jpgs, do all get rendered as canvases?
+5. When a new collection goes online, are manifests generated and cached or is that done on demand? If the latter, what if the work has 2000 pages?
