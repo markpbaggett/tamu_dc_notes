@@ -1,6 +1,14 @@
 Appendix 1: Definitions
 =======================
 
+E
+-
+
+**Exhibit**: Exhibits provide libraries, archives, and museums a mechanism to add meaningful context and significance
+beyond descriptive metadata to works from large collections or aggregated from disparate software or institutions.
+Exhibits can be organized topically from multiple collections or smaller selections from large collections. In adding
+context, the exhibit provides an additional access point to the greater digital collection.
+
 W
 -
 

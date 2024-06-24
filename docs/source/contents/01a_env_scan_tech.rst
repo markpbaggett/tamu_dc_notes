@@ -9,8 +9,15 @@ This document attempts to define and document the various services that inform t
 While specific microservices may be covered or explored, this document attempts to center on the functions of the
 various software rather than the software themselves.
 
+Digital Assets Management
+-------------------------
+
+IIIF
+----
+
+==========
 IIIF Image
-----------
+==========
 
 The `IIIF (International Image Interoperability Framework) Image Service <https://iiif.io/api/image/3.0/>`_ is a
 standard and a set of APIs designed to facilitate the sharing, accessing, and viewing of images from various
@@ -41,8 +48,9 @@ Here are the results of several requests and processing times with an image from
 * `Grab image at 50 pct <https://api.library.tamu.edu/iiif/2/6d8552af-83dd-3897-846b-aa71695e36bc/full/pct:50/0/default.jpg>`_: 3.24 seconds
 * `Grab a small region <https://api.library.tamu.edu/iiif/2/6d8552af-83dd-3897-846b-aa71695e36bc/10,75,75,800/full/0/default.jpg>`_: 1.45 seonds
 
-IIIF Presentation
------------------
+============================================
+Presentation of Works with IIIF Presentation
+============================================
 
 The IIIF (International Image Interoperability Framework) `Presentation API <https://iiif.io/api/presentation/3.0/>`_ is
 a specification designed to enable the structured presentation of digital objects in a way that supports rich user
@@ -90,9 +98,9 @@ This helps tell an important story about this unique collection and does so with
 Additionally, let's look at the `Letter, Dom Lynch in New York N.Y. to Ebenzer Hazard.,1793 July 5 <https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https%3A%2F%2Fdigital.lib.utk.edu%2Fassemble%2Fmanifest%2Finsurancena%2F181>`_.
 This resource has accompanying annotations of the handwritten text that is searchable and displayable.
 
-======
+------
 IRIIIF
-======
+------
 
 IRIIIF is a Spring backend for the Institutional Repository International Image Interoperability Framework (IRIIIF) Service
 developed and maintained by Texas A&M University Libraries. This service provides IIIF manifest generation for works in
@@ -110,3 +118,55 @@ including:
 3. How are manifests from DSPACE RDF informed? For instance, how does IRIIIF know sequence order?
 4. Does IRIIIF assume all files on a work need to be delivered as canvases? In other words, if a work has a PDF, jp2s, and jpgs, do all get rendered as canvases?
 5. When a new collection goes online, are manifests generated and cached or is that done on demand? If the latter, what if the work has 2000 pages?
+
+--------------
+OCR and Search
+--------------
+
+How is OCR presented?
+
+---------------------------------
+Transcription of Handwritten Text
+---------------------------------
+
+Handwritten text is present in some works found in our repositories. Historically, handwritten text has been costly for
+Libraries, Archives, and Museums to transcribe in order to make works more searchable, understandable, and useful. At
+previous institutions I have worked at, there was a history of text encoding with TEI. This required humans to interpret
+the text, transcribe it, and encode it as well formed XML and valid TEI. This was a costly process but it provided an
+easy approach to present the work with IIIF annotations:
+
+.. raw:: html
+
+   <iframe src="https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https://digital.lib.utk.edu/assemble/manifest/burford/155" width="750" height="600"></iframe>
+
+At Texas A&M, a different approach has been taken. Rather than transcribe the resources in house, pilots with
+`From the Page <https://fromthepage.com/>`_ have been pursued. FromThePage is an open-source tool that allows
+volunteers to collaborate to transcribe handwritten documents rather than having all the work be done in house. With
+From the Page, a work or collection is imported as IIIF Manifests.  Each page is then loaded from the providing institution
+as IIIF Image resources and volunteers transcribe the work according to guidelines created by the providing institution.
+
+At any point after the transcription begins, the providing institution can export a project as HTML, plain text, CSV,
+TEI, IIIF, or another export format. The export format chosen greatly affects the interoperability of the resource. For
+instance, `TEI from the Houston Oil Minutes Project <https://fromthepage.com/export/minutes-of-houston-oil-company-of-texas-b1bc1655-1b0c-4947-8144-c0f657acebb4/tei>`_
+easily provides the transcription in a format that many TEI powered platforms (like TEI Publisher) can import and use.
+The `IIIF here <https://fromthepage.com/iiif/52425/manifest>`_ is a little different. While it's made available in a
+manifest according to custom profiles from From the Page, it doesn't follow what I'd consider to be valid IIIF. Instead
+of adding as annotations, it adds the transcriptions as a :code:`seeAlso`:
+
+.. code-block:: json
+
+    {
+      "label": "HTML Transcription",
+      "format": "text/html",
+      "profile": "https://github.com/benwbrum/fromthepage/wiki/FromThePage-Support-for-the-IIIF-Presentation-API-and-Web-Annotations#html-transcription",
+      "@id": "https://fromthepage.com/tamulibraries/houston-oil-company-of-texas/minutes-of-houston-oil-company-of-texas-b1bc1655-1b0c-4947-8144-c0f657acebb4/annotation/1691796/html/transcription"
+    }
+
+In Presentation 2.0, :code:`seeAlso` was defined as, "A link to a machine readable document that semantically describes
+the resource with the seeAlso property, such as an XML or RDF description. This document could be used for search and
+discovery or inferencing purposes, or just to provide a longer description of the resource. The profile and format
+properties of the document should be given to help the client to make appropriate use of the document." Based on this,
+it's not clear why this model was chosen.  That being said, it does work in
+`Mirador <https://projectmirador.org/embed/?iiif-content=https://fromthepage.com/iiif/52425/manifest>`_ but doesn't work
+in other viewers like `Clover <https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https://fromthepage.com/iiif/52425/manifest>`_
+because it doesn't follow the API specification.
