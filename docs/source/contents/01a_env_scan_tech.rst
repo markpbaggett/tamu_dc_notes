@@ -12,6 +12,18 @@ various software rather than the software themselves.
 Digital Assets Management
 -------------------------
 
+Digital assets management, or the process of using software to store, organize, share, find, and retrieve digital assets
+for an organization is done with more than one system. Minimally, some files are stored in Fedora and others are stored
+in DSPACE.
+
+**Questions / Things to Answer**
+
+1. How do works and files get into either system programmatically?
+2. In DSPACE, what is the process for generating RDF?
+3. In DSPACE, how is sequence determined?
+4. Does Avalon use Fedora or a separate assets management system?
+5. What does Internet Archive Book Reader use?
+
 IIIF
 ----
 
@@ -119,12 +131,18 @@ including:
 3. How are manifests from DSPACE RDF informed? For instance, how does IRIIIF know sequence order?
 4. Does IRIIIF assume all files on a work need to be delivered as canvases? In other words, if a work has a PDF, jp2s, and jpgs, do all get rendered as canvases?
 5. When a new collection goes online, are manifests generated and cached or is that done on demand? If the latter, what if the work has 2000 pages?
+6. If an item in DSPACE has no RDF, who can generate that so that the work has a corresponding manifest? For example, this item from `Primeros Libros <https://api.library.tamu.edu/iiif-service/dspace/canvas/1969.1/94767/629/pl_blac_017_00293.jpf?update=true>`_.
 
 --------------
 OCR and Search
 --------------
 
-How is OCR presented?
+OCR is important for the discovery of text resources.
+
+**Questions**:
+
+* How is OCR utilized in SAGE or Spotlight?
+* How is OCR used for used in the viewer (IIIF Search)?
 
 ---------------------------------
 Transcription of Handwritten Text
