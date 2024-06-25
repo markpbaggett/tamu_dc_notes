@@ -65,6 +65,7 @@ IIIF viewers are interchangeable.  For instance, here is the :code:`Geological S
 repository in 4 different viewers:
 
 * `Clover <https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https%3A%2F%2Fapi.library.tamu.edu%2Fiiif-service%2Fdspace%2Fpresentation%2F1969.1%2F2808>`_
+* `Theseus <https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/2808>`_
 * `Mirador <https://projectmirador.org/embed/?iiif-content=https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/2808>`_
 * `Universal Viewer <https://uv-v3.netlify.app/#?c=&m=&s=&cv=&manifest=https%3A%2F%2Fapi.library.tamu.edu%2Fiiif-service%2Fdspace%2Fpresentation%2F1969.1%2F2808&xywh=-391%2C-116%2C2558%2C2309>`_
 * `Glycerine <https://demo.viewer.glycerine.io/viewer?iiif-content=https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/2808>`_
@@ -149,24 +150,18 @@ At any point after the transcription begins, the providing institution can expor
 TEI, IIIF, or another export format. The export format chosen greatly affects the interoperability of the resource. For
 instance, `TEI from the Houston Oil Minutes Project <https://fromthepage.com/export/minutes-of-houston-oil-company-of-texas-b1bc1655-1b0c-4947-8144-c0f657acebb4/tei>`_
 easily provides the transcription in a format that many TEI powered platforms (like TEI Publisher) can import and use.
-The `IIIF here <https://fromthepage.com/iiif/52425/manifest>`_ is a little different. While it's made available in a
-manifest according to custom profiles from From the Page, it doesn't follow what I'd consider to be valid IIIF. Instead
-of adding as annotations, it adds the transcriptions as a :code:`seeAlso`:
+The `IIIF export <https://fromthepage.com/iiif/52425/manifest>`_ includes an annotation list that can be opened in viewers
+like `Mirador <https://projectmirador.org/embed/?iiif-content=https://fromthepage.com/iiif/52425/manifest>`_ or
+`Theseus <https://theseus-viewer.netlify.app/?iiif-content=https://fromthepage.com/iiif/52425/manifest>`_.
 
 .. code-block:: json
 
-    {
-      "label": "HTML Transcription",
-      "format": "text/html",
-      "profile": "https://github.com/benwbrum/fromthepage/wiki/FromThePage-Support-for-the-IIIF-Presentation-API-and-Web-Annotations#html-transcription",
-      "@id": "https://fromthepage.com/tamulibraries/houston-oil-company-of-texas/minutes-of-houston-oil-company-of-texas-b1bc1655-1b0c-4947-8144-c0f657acebb4/annotation/1691796/html/transcription"
-    }
+      "otherContent": [
+        {
+          "@id": "https://fromthepage.com/iiif/1692120/list/transcription",
+          "@type": "sc:AnnotationList",
+          "label": "Transcription"
+        }
+      ]
 
-In Presentation 2.0, :code:`seeAlso` was defined as, "A link to a machine readable document that semantically describes
-the resource with the seeAlso property, such as an XML or RDF description. This document could be used for search and
-discovery or inferencing purposes, or just to provide a longer description of the resource. The profile and format
-properties of the document should be given to help the client to make appropriate use of the document." Based on this,
-it's not clear why this model was chosen.  That being said, it does work in
-`Mirador <https://projectmirador.org/embed/?iiif-content=https://fromthepage.com/iiif/52425/manifest>`_ but doesn't work
-in other viewers like `Clover <https://samvera-labs.github.io/clover-iiif/docs/viewer/demo?iiif-content=https://fromthepage.com/iiif/52425/manifest>`_
-because it doesn't follow the API specification.
+
