@@ -10,25 +10,32 @@ Vision
 Principles
 ----------
 
-Objectives
-----------
+Objectives and Tactics
+----------------------
 
 ===========================
 Expand Discovery and Access
 ===========================
 
-* Make our distinct digital collections discoverable and accessible when, where, and how our users need them
-* Increase discoverability, availability, and accessibility of works regardless of collection
-* Increase visibility and usability of hidden collections and works
-* SEO
-* Aggregation
-* Reuse
+* Make our unique digital collections discoverable and accessible when and where are our users need them
+* Increase discoverability, availability, and accessibility of digital works
+    * Develop workflows and create closed captioning files for all video works served to our users.
+    * Develop workflows to create transcriptions of handwritten text documents.
+    * Develop workflows to create and reuse OCR for typed works.
+* Increase visibility and usability of hidden collections
+    * Identify "hidden" digital collections that are online but are missing minimal description
+    * Develop workflows to automate the generation of minimal descriptive metadata
+* Improve discoverability of works and collections in search engines and external services
+    * Investigate current SEO of collections are develop plans to improve across digital collections
+* Create interoperability and discovery of assets across collections
 
 =========================================
 Optimize Services and Strengthen Capacity
 =========================================
 
-* Enhance digital services and infrastructure to meet the needs of researchers and students at Texas A&M and beyond
+* Enhance digital services and infrastructure to meet the needs of researchers and students at Texas A&M and beyond (drop)
+* Streamline workflows for import and ingest of new collections
+* Improve manifest creation for works from digital assets management systems
 
 ==============
 Measure Impact
