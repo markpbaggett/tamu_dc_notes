@@ -10,6 +10,8 @@ Vision
 Principles
 ----------
 
+* Have strong, immediate yet durable interest and research value to the Texas A&M community and beyond
+* Represent the depth and diversity of the historical and cultural resources of Texas A&M's rare or unique materials.
 * Provide equitable access to resources of significant value to the Texas A&M community and beyond
 * Enhance and widen access and use of the Library's rare and unique collections
 * Promote discoverability and provide context for thoughtfully curated collections
@@ -19,7 +21,8 @@ Principles
     * Ensure users have the information they need to use our works responsibly
     * Follow CARE principals
 * Promote the use of digital collections in new research and creative activity
-* Ensure our initiatives flourish by creating and supporting sustainable solutions
+* Ensure our initiatives flourish by creating and supporting sustainable solutions and software
+* Adhere to digitization and metadata best practice standards
 
 Objectives and Tactics
 ----------------------
