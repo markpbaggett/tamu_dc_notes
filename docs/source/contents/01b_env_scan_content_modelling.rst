@@ -362,7 +362,7 @@ An object
         pcdm:hasMember <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_21>, <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_18>, <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_25>, <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_1>, <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_6>, <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_27>, <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_13> ;
         dce:publisher "London, J. Taylor", "DIGITAL: Cushing Memorial Library and Archives" ;
         dce:format "Reformatted digital" ;
-        dce:subject "Architecture--England--London", London (England)--Description and travel", "NA970 .B8 1825" ;
+        dce:subject "Architecture--England--London", "London (England)--Description and travel", "NA970 .B8 1825" ;
         dce:title "Illustrations of the public buildings of London; with historical and descriptive accounts of each edifice" ;
         dce:rights "https://rightsstatements.org/page/NoC-US/1.0/?language=en" ;
         dce:description "Two volumes published between 1825 and 1828; Added title-pages, engravings." ;
@@ -395,7 +395,7 @@ orderProxies
     @prefix dcterms: <http://purl.org/dc/terms/> .
     @prefix dce: <http://purl.org/dc/elements/1.1/> .
 
-    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/orderProxies > a ldp:RDFSource, fedora-repo:Container, ldp:Container, ldp:DirectContainer, fedora-repo:Resource, pcdm:Object ;
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/orderProxies> a ldp:RDFSource, fedora-repo:Container, ldp:Container, ldp:DirectContainer, fedora-repo:Resource, pcdm:Object ;
         fedora-repo:createdBy "fedoraAdmin" ;
         fedora-repo:created "fedoraAdmin", "08-25-22 11:37 AM" ;
         fedora-repo:writeable "true" ;

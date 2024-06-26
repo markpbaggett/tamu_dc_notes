@@ -28,6 +28,7 @@ Expand Discovery and Access
 * Improve discoverability of works and collections in search engines and external services
     * Investigate current SEO of collections are develop plans to improve across digital collections
 * Create interoperability and discovery of assets across collections
+* Make collections and works readily usable for researchers and computational methods
 
 =========================================
 Optimize Services and Strengthen Capacity
@@ -42,6 +43,9 @@ Measure Impact
 ==============
 
 * Gather
+
+Make our
+==============
 
 Things to Include / Consider Including
 --------------------------------------

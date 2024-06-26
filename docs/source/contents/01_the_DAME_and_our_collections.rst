@@ -575,7 +575,7 @@ There are 39 items. Many of the maps include a corresponding :code:`KML` that su
 The KMLs I've seen thus far are relatively simple and only contain and initial starting location for where to associate
 the map with lat / long coords:
 
-.. code-block:: kml
+.. code-block:: xml
 
     <?xml version="1.0" encoding="UTF-8"?>
     <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
