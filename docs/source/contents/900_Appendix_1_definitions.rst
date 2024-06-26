@@ -1,6 +1,14 @@
 Appendix 1: Definitions
 =======================
 
+C
+-
+
+**Collections as Data**: the concept of treating library collections not just as static items to be catalogued and
+stored, but as dynamic datasets that can be analyzed, manipulated, and used for research with computational methods.
+The term is derived from "The Santa Barbara Statement on Collections as Data" [#f1]_ and the earlier "Collections as Data:
+Stewardship and Use Models to Enhance Access" [#f2]_.
+
 E
 -
 
@@ -16,3 +24,9 @@ W
 intellectual entity, such as a book, film, dissertation, etc. Works have member Objects representing their physical
 structure (e.g., pages in a book), FileSets to maintain representations of the entire resource (e.g. a PDF of all the
 pages), and TopRanges representing their logical structure or structures (e.g., sections and chapters in a book).
+
+.. rubric:: Footnotes
+
+.. [#f1] https://zenodo.org/records/3066209
+.. [#f2] https://www.digitalpreservation.gov/meetings/dcs16.html
+

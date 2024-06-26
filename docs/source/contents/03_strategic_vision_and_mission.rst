@@ -1,5 +1,5 @@
-Digital Collections Strategy
-============================
+DRAFT: Digital Collections Strategy
+===================================
 
 Mission
 -------
@@ -44,6 +44,8 @@ Optimize Services, Improve Governance, and Strengthen Capacity
 *Enhance documentation, microservices, and workflows to increase use and output*
 
 * Enhance digital services and infrastructure to meet the needs of researchers and students at Texas A&M and beyond (drop)
+* Continue to adopt open standards to ensure interoperability
+    * Build applications and microservices on international open standards (IIIF, OCFL, W3C, etc.)
 * Streamline workflows for import and ingest of new collections
 * Improve manifest creation for works from digital assets management systems
 * Acknowledge efforts and give CRediT
@@ -63,14 +65,15 @@ Empower Research and Reuse
 
 *Empower researchers to leverage our collections in their own creative activity*
 
-* Create and make accessible computational datasets for our works and collections
-    * Package text and transcripts related to digital collections so that they are easily usable by researchers
+* Encourage computational use fo digitized and born digital collections
+    * Create and make accessible computational datasets for our works and collections
+    * Package text and transcripts related to digital collections and works in easily understandable ways
 * Develop, provide access to, and support responsible computational use of collections as data
     * Apply accurate rights and licenses based on RightsStatements.org, Creative Commons, Open Data Commons, and Traditional Knowledge Notices
     * Consider and develop adequate safeguards against improper usage, detrimental loss of context, and the amplification of biases in Artificial Intelligence
 * Identify stakeholders and understand needs
     * Reduce barriers to use
-* Make users aware of pathways to reuse
+* Lower barriers to use and reuse of collections
     * Create and share documentation on how to access collections as data
     * Publicize Open APIs and other pathways that enable reuse
     * Provide public access to governing documentation to increase understandability (Metadata, Governance, everything)
