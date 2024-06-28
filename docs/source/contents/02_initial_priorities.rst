@@ -32,6 +32,8 @@ Initial Priorities
     - Understand and document how Solr is implemented for Collections and Works
         - Document
     - Understand OAI-PMH and where it's available
+    - How long is a manifest cached in REDIS / IRIIIFService
+        - How long will this be cached for
 - Increase accessibility, usability, and discoverability of collections
     - Create plan to add closed captioning for existing video collections
     - Create transcripts / audio descriptions for existing audio collections

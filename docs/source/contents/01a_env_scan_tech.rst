@@ -60,6 +60,74 @@ Here are the results of several requests and processing times with an image from
 * `Grab image at 50 pct <https://api.library.tamu.edu/iiif/2/6d8552af-83dd-3897-846b-aa71695e36bc/full/pct:50/0/default.jpg>`_: 3.24 seconds
 * `Grab a small region <https://api.library.tamu.edu/iiif/2/6d8552af-83dd-3897-846b-aa71695e36bc/10,75,75,800/full/0/default.jpg>`_: 1.45 seonds
 
+------------
+Load Testing
+------------
+
+The tests above are useful, but they don't really test the performance and scalability of our image server. We can use
+something like `Locust <https://locust.io/>`_ to do that. Luckily, there is a community project with specific IIIF tasks
+that mimic what a series of users might do in an application leveraging an image server.
+
+###########################################################
+Scenario 1: Test Images from Exhibits Using Files in Fedora
+###########################################################
+
+To perform this small test, let's use the images from these manifests:
+
+https://library.tamu.edu/iiif_manifests/houstonoilmanifest.json
+https://api.library.tamu.edu/iiif-service/fedora/presentation/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/berger_cloonan_objects/2
+https://api.library.tamu.edu/iiif-service/fedora/presentation/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/time_of_resolve_objects/2
+https://api.library.tamu.edu/iiif-service/fedora/presentation/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/time_of_resolve_objects/69
+https://api.library.tamu.edu/iiif-service/fedora/presentation/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/time_of_resolve_objects/3
+https://api.library.tamu.edu/iiif-service/fedora/presentation/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/time_of_resolve_objects/5
+
+.. code-block:: text
+
+###########################################################
+Scenario 2: Test Images from Exhibits Using Files in DSPACE
+###########################################################
+
+To perform this small test, let's use the images from these manifests:
+
+.. code-block:: text
+
+    https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/2808
+    https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/2491
+    https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/2809
+    https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/2810
+    https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/2811
+    https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/2822
+    https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/3690
+    https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/3041
+    https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/2933
+    https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/128905
+    https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/128911
+
+###############################################################################
+Scenario 3: Test Images from IRIIIF Resources from DSPACE but not in an Exhibit
+###############################################################################
+
+To perform this small test, let's use the images from just this manifest:
+
+.. code-block:: text
+
+    https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/92826
+
+Note. I've played with this manifest alot today so it's possible this performs well.
+
+Other test params are `10 users` spawning `3 users` per second and we'll run for 10 minutes.
+
+Here are the results:
+
+.. raw:: html
+
+    <iframe src="../_static/reports/primeros_libros_common.html" width="750" height="600"></iframe>
+
+###########################################
+Scenario 4: Test Images from PDFs in DSPACE
+###########################################
+
+
 ============================================
 Presentation of Works with IIIF Presentation
 ============================================
