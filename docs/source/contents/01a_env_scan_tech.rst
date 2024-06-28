@@ -74,14 +74,23 @@ Scenario 1: Test Images from Exhibits Using Files in Fedora
 
 To perform this small test, let's use the images from these manifests:
 
-https://library.tamu.edu/iiif_manifests/houstonoilmanifest.json
-https://api.library.tamu.edu/iiif-service/fedora/presentation/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/berger_cloonan_objects/2
-https://api.library.tamu.edu/iiif-service/fedora/presentation/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/time_of_resolve_objects/2
-https://api.library.tamu.edu/iiif-service/fedora/presentation/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/time_of_resolve_objects/69
-https://api.library.tamu.edu/iiif-service/fedora/presentation/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/time_of_resolve_objects/3
-https://api.library.tamu.edu/iiif-service/fedora/presentation/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/time_of_resolve_objects/5
-
 .. code-block:: text
+
+    https://library.tamu.edu/iiif_manifests/houstonoilmanifest.json
+    https://api.library.tamu.edu/iiif-service/fedora/presentation/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/berger_cloonan_objects/2
+    https://api.library.tamu.edu/iiif-service/fedora/presentation/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/time_of_resolve_objects/2
+    https://api.library.tamu.edu/iiif-service/fedora/presentation/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/time_of_resolve_objects/69
+    https://api.library.tamu.edu/iiif-service/fedora/presentation/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/time_of_resolve_objects/3
+    https://api.library.tamu.edu/iiif-service/fedora/presentation/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/time_of_resolve_objects/5
+
+
+Other test params are `10 users` spawning `3 users` per second and we'll run for 10 minutes.
+
+Here are the results:
+
+.. raw:: html
+
+    <iframe src="../_static/reports/fedora_tests.html" width="750" height="600"></iframe>
 
 ###########################################################
 Scenario 2: Test Images from Exhibits Using Files in DSPACE
@@ -103,6 +112,14 @@ To perform this small test, let's use the images from these manifests:
     https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/128905
     https://api.library.tamu.edu/iiif-service/dspace/presentation/1969.1/128911
 
+Other test params are `10 users` spawning `3 users` per second and we'll run for 10 minutes.
+
+Here are the results:
+
+.. raw:: html
+
+    <iframe src="../_static/reports/dspace_test.html" width="750" height="600"></iframe>
+
 ###############################################################################
 Scenario 3: Test Images from IRIIIF Resources from DSPACE but not in an Exhibit
 ###############################################################################
@@ -123,9 +140,17 @@ Here are the results:
 
     <iframe src="../_static/reports/primeros_libros_common.html" width="750" height="600"></iframe>
 
-###########################################
-Scenario 4: Test Images from PDFs in DSPACE
-###########################################
+##########################################################
+Scenario 4: Test Images from My Custom Generated Manifests
+##########################################################
+
+To perform this test, let's use `all these manifests <https://github.com/markpbaggett/static_iiif/tree/main/manifests/tamu>`_.
+
+Other test params are `10 users` spawning `3 users` per second and we'll run for 10 minutes.
+
+.. raw:: html
+
+    <iframe src="../_static/reports/mark.html" width="750" height="600"></iframe>
 
 
 ============================================
