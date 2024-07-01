@@ -43,5 +43,6 @@ Initial Priorities
     - Propose a single search interface based on underlying Solr
     - Understand OAI-PMH and where it's available
     - Advocate for `Implementation of FAIRiCat <https://signposting.org/FAIRiCat/>`_ where possible
+    - Create standards for access copies and intermediate files
 - Increase trust in Digital Collections platforms
     - Make sure all OakTrust links are over HTTPS (are any right now?)

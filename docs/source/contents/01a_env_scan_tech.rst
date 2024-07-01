@@ -120,6 +120,13 @@ Here are the results:
 
     <iframe src="../_static/reports/dspace_test.html" width="750" height="600"></iframe>
 
+
+A quick note.  Some problems here might be related to image sizes:
+
+:code:`https://api.library.tamu.edu/iiif/2/bb864ab1-84ce-340d-8198-5e4c7bb87ca2;1/info.json`
+
+That's right, a color text page is nearly 20K pixels on the long edge. Cantaloupe can't even build it.
+
 ###############################################################################
 Scenario 3: Test Images from IRIIIF Resources from DSPACE but not in an Exhibit
 ###############################################################################
