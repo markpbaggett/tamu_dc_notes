@@ -162,6 +162,11 @@ project:
 In other words, assuming this image is 32.5 on the long edge, the image we're saving would be much smaller and processed much
 more efficiently.
 
+Intermediate and Access File Standards
+--------------------------------------
+
+Following the recommendations of the `FADGI Technical Guidelines for Digitizing Cultural Heritage Materials <https://www.digitizationguidelines.gov/guidelines/FADGITechnicalGuidelinesforDigitizingCulturalHeritageMaterials_ThirdEdition_05092023.pdf>`_,
+`draft recommendations for file standards can be found in the DPMT shared drive <https://docs.google.com/spreadsheets/d/1zTxYXOxgrbOoKkBjv4qadvoqQ7SxqS9rAJ-luRzlf5Y/edit?gid=0#gid=0>`_ .
 
 .. rubric:: Footnotes
 
