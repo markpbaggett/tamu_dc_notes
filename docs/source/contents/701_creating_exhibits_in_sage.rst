@@ -103,16 +103,15 @@ In this simple example, we're matching the bad string and replacing it with the 
 
 Once the operator is defined, we can add it to a job and rerun it with the play button.
 
-============
+------------
 Full Example
-============
+------------
 
 This walks you through SAGE exhibit creation starting with Solr being updated after a new collection has been ingested
 into Fedora.
 
----------------------------------
 Step 1: Determine Filter to Works
----------------------------------
+=================================
 
 Before you start defining a new exhibit and a new reader, first, you should check that you can find the associated works
 that you want to be in the exhibit. You can do this with a combination of the Fedora collection URI and the Fedora Solr.
