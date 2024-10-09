@@ -10,7 +10,14 @@ This portal contains initial thoughts for Digital Collections work at Texas A&M 
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
+   :caption: Planning:
    :glob:
 
    contents/*
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Workflows:
+   :glob:
+
+   workflows/*
