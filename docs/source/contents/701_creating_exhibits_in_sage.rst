@@ -116,6 +116,17 @@ Step 1: Determine Filter to Works
 Before you start defining a new exhibit and a new reader, first, you should check that you can find the associated works
 that you want to be in the exhibit. You can do this with a combination of the Fedora collection URI and the Fedora Solr.
 Let's pretend our Fedora collection is :code:`https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924`
-and is in a core called :code:`sage` at http://10.55.148.108:31852/solr. If we go there, we can see if we can find all
-members of a collection like so:
+and is in a core called :code:`fedora-core` at https://api-pre.library.tamu.edu/fcrepo-solr. If we go there, we can see
+if we can find all members of a collection like so:
+
+https://api-pre.library.tamu.edu/fcrepo-solr/fedora-core/select?indent=on&q=hasParent:%22https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924%22&wt=json&fl=manifest,id&rows=10000
+
+Notice, this only returns 1 result. If we take a closer look at Fedora, we can see why. There is no :code:`pcdm:hasMember`
+relationship and only one object has a :code:`pcdm:hasParent` relationship to this node.  To fix, we have a few options:
+
+1. we can change the Solr query to retrieve the works we want by changing the value of :code:`hasParent`
+2. we can change the Solr query so that we are fetching works by a different field and value entirely
+
+For this example, let's change the value to match the :code:`hasParent` value in the works we want.
+
 
