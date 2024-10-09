@@ -5,6 +5,15 @@ Creating an Exhibit from Scratch in SAGE
 SAGE is an exhibit and digital collections discovery platform created by developers at Texas A&M University. This
 document describes how to create a collection from Scratch in SAGE.
 
+--------------
+SAGE Instances
+--------------
+
+SAGE can be accessed below:
+
+* `Production <https://library.tamu.edu/discovery/>`_
+* `Pre (Maybe Dev too?) <https://demos.library.tamu.edu/sage>`_
+
 ---------------
 Core Management
 ---------------
@@ -93,7 +102,7 @@ core resulted in the manifest field including the start of the Fedora url:
 
 .. code-block:: text
 
-https://api-pre.library.tamu.edu/iiif-service/fedora/presentation/https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/10
+    https://api-pre.library.tamu.edu/iiif-service/fedora/presentation/https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/10
 
 To fix this, we can define an operator to replace the bad string with what the manifest request should look like:
 
@@ -108,25 +117,269 @@ Full Example
 ------------
 
 This walks you through SAGE exhibit creation starting with Solr being updated after a new collection has been ingested
-into Fedora.
+into Fedora with MagPie.
 
 Step 1: Determine Filter to Works
 =================================
 
 Before you start defining a new exhibit and a new reader, first, you should check that you can find the associated works
-that you want to be in the exhibit. You can do this with a combination of the Fedora collection URI and the Fedora Solr.
+that you want to be in the exhibit. You can do this with a combination of the Fedora collection URI and the Fedora Solr instance.
 Let's pretend our Fedora collection is :code:`https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924`
 and is in a core called :code:`fedora-core` at https://api-pre.library.tamu.edu/fcrepo-solr. If we go there, we can see
 if we can find all members of a collection like so:
 
 https://api-pre.library.tamu.edu/fcrepo-solr/fedora-core/select?indent=on&q=hasParent:%22https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924%22&wt=json&fl=manifest,id&rows=10000
 
-Notice, this only returns 1 result. If we take a closer look at Fedora, we can see why. There is no :code:`pcdm:hasMember`
-relationship and only one object has a :code:`pcdm:hasParent` relationship to this node.  To fix, we have a few options:
+Notice, this only returns 1 result.
 
-1. we can change the Solr query to retrieve the works we want by changing the value of :code:`hasParent`
-2. we can change the Solr query so that we are fetching works by a different field and value entirely
+.. code-block:: json
 
-For this example, let's change the value to match the :code:`hasParent` value in the works we want.
+    {
+      "responseHeader": {
+        "status": 0,
+        "QTime": 0,
+        "params": {
+          "q": "hasParent:\"https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924\"",
+          "indent": "on",
+          "fl": "manifest,id",
+          "rows": "10000",
+          "wt": "json"
+        }
+      },
+      "response": {
+        "numFound": 1,
+        "start": 0,
+        "docs": [
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924/members"
+          }
+        ]
+      }
+    }
 
+Let's take a closer look at Fedora to see what's going on.  If we curl the Fedora resource, we can see:
+
+.. code-block:: turtle
+
+    @prefix fedora: <http://fedora.info/definitions/v4/repository#> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+    <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924> a fedora:Container,
+            fedora:Resource,
+            pcdm:Object,
+            ldp:Container,
+            ldp:RDFSource ;
+        fedora:created "2024-09-24T16:49:01.566000+00:00"^^xsd:dateTime ;
+        fedora:createdBy "fedoraAdmin" ;
+        fedora:hasParent <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c> ;
+        fedora:lastModified "2024-09-24T16:49:01.566000+00:00"^^xsd:dateTime ;
+        fedora:lastModifiedBy "fedoraAdmin" ;
+        fedora:writable false ;
+        pcdm:hasMember <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/10>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/11>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/12>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/13>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/15>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/16>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/17>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/18>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/19>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/2>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/20>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/21>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/22>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/23>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/24>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/25>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/26>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/27>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/3>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/4>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/5>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/6>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/7>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/8>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/9> ;
+        ldp:contains <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924/members> .
+
+As you can see, this resource relates to many resources via :code:`pcdm:hasMember`. Let's look at one of those to figure
+out if they have a :code:`pcdm:hasParent` relationship:
+
+.. code-block:: turtle
+
+    @prefix dc: <http://purl.org/dc/elements/1.1/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+    @prefix fedora: <http://fedora.info/definitions/v4/repository#> .
+    @prefix iana: <http://www.iana.org/assignments/relation/> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+    <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/9> a fedora:Container,
+            fedora:Resource,
+            pcdm:Object,
+            ldp:Container,
+            ldp:RDFSource ;
+        fedora:created "2024-09-24T16:57:52.164000+00:00"^^xsd:dateTime ;
+        fedora:createdBy "fedoraAdmin" ;
+        fedora:hasParent <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects> ;
+        fedora:lastModified "2024-09-24T16:57:52.164000+00:00"^^xsd:dateTime ;
+        fedora:lastModifiedBy "fedoraAdmin" ;
+        fedora:writable false ;
+        pcdm:hasMember <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/9/pages/page_0> ;
+        dc:creator "Blumberg, Stephen Carrie" ;
+        dc:description "From the professional archives of Nicholas A. Basbanes, now held by Cushing Memorial Library & Archives, Texas A&M University." ;
+        dc:format "reformatted digital" ;
+        dc:rights "In copyright - Educational Use Permitted; For more information see:  http://rightsstatements.org/vocab/InC-EDU/1.0/" ;
+        dc:subject "Blumberg, Stephen Carrie",
+            "Collectibles",
+            "Homes",
+            "Pictorial works" ;
+        dc:title "Linocut print inscribed to Nicholas A Basbanes" ;
+        dc:type "art reproduction",
+            "linocuts (prints)" ;
+        dcterms:abstract "In January 1991, Basbanes traveled to Des Moines, Iowa, to attend the trial of Stephen Blumberg, who stood accused of stealing nearly 24,000 books from cultural institutions across the United States and Canada. During this time, Basbanes had an exceptional opportunity to travel with Blumberg to his home in Ottumwa, Iowa. The town is notable as being nearly in the center of the country, thus making it the ideal base of operations for Blumberg as he drove around the country illicitly acquiring his collection. On the occasion of this, his final visit to the house before being convicted and sentenced, Blumberg offered Basbanes this linocut print -- an original, hand-printed design that demonstrates the biblioklept’s passion for Victorian architecture." ;
+        dcterms:coverage "Iowa--Ottumwa" ;
+        dcterms:created "1991?" ;
+        dcterms:type "StillImage" ;
+        iana:first <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/9/orderProxies/page_0_proxy> ;
+        iana:last <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/9/orderProxies/page_0_proxy> ;
+        ldp:contains <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/9/orderProxies>,
+            <https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/9/pages> .
+
+Notice, that this object is related to a different resource via :code:`pcdm:hasMember`. Therefore, when solr indexes these
+resources, they won't have Solr documents that match what we said above.
+
+To fix, we have a few options. First, we can change the Solr query to retrieve the works we want by changing the value
+of :code:`hasParent` to match what is here.  When we do this, we get:
+
+.. code-block:: json
+
+    {
+      "responseHeader": {
+        "status": 0,
+        "QTime": 0,
+        "params": {
+          "q": "hasParent:\"https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects\"",
+          "indent": "on",
+          "fl": "manifest,id",
+          "rows": "10000",
+          "wt": "json"
+        }
+      },
+      "response": {
+        "numFound": 25,
+        "start": 0,
+        "docs": [
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/10"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/13"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/12"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/18"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/17"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/21"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/16"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/22"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/24"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/25"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/26"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/23"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/15"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/5"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/6"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/27"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/7"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/8"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/9"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/11"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/19"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/3"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/20"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/2"
+          },
+          {
+            "id": "https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects/4"
+          }
+        ]
+      }
+    }
+
+This is what we expected originally. SAGE doesn't prescribe a specific way that this must be done, so you could modify
+your Solr query accordingly to build your exhibit of choice.
+
+Step 2: Read Data from Source Solr
+==================================
+
+Now that we know the query to get the Solr documents we want, we can read those in from the source Solr so they can be
+written to SAGE's SOLR and ultimately used in an exhibit.  To do this, we navigate to **Reader Management**. SAGE needs
+you to define all the fields you need. To save time, let's copy an existing one and give it a name, the source solr, and
+a filter that matches the solr query we want to use. In this case, it will be:
+
+hasParent:"https://api-pre.library.tamu.edu/fcrepo/rest/bb/97/f2/3e/bb97f23e-803a-4bd6-8406-06802623554c/basbanes-exhibit-texts-20240924_objects"
+
+We also should add and modify field mappings that match data differently.
+
+After we're done, we click **Clone**.
+
+Step 3: Write Data to Destination Solr
+======================================
+
+Similarly, now we need to write to our destination Solr instance.  To do this, make a copy of an existing, give it a unique
+name, set the destination, and modify it appropriately. Then hit clone.
+
+Step 4: Set up a Job
+====================
+
+Nothing is read or written until a job exists, and it is run.
+
+Navigate to job management and click new. Give it a name, select a reader, select a writer, and set frequence to on demand.
+At this point, you shouldn't need an operator.
 
