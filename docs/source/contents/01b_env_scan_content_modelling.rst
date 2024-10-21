@@ -10,6 +10,595 @@ In some instances, properties have been removed to make the graph simpler and mo
 
 For items with the concept of "Children", a note with an example is included in addition to the graph.
 
+Concepts
+--------
+
+==========
+Collection
+==========
+
+Collection resources currently look like this:
+
+.. code-block:: turtle
+
+    @prefix fedora: <http://fedora.info/definitions/v4/repository#> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion> a fedora:Container,
+            fedora:Resource,
+            pcdm:Object,
+            ldp:Container,
+            ldp:RDFSource ;
+        fedora:created "2024-10-15T21:04:02.645000+00:00"^^xsd:dateTime ;
+        fedora:createdBy "fedoraAdmin" ;
+        fedora:hasParent <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13> ;
+        fedora:lastModified "2024-10-15T21:04:02.645000+00:00"^^xsd:dateTime ;
+        fedora:lastModifiedBy "fedoraAdmin" ;
+        fedora:writable false ;
+        pcdm:hasMember <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/10>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/11>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/12>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/13>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/15>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/16>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/17>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/18>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/19>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/2>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/20>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/21>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/22>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/23>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/24>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/25>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/26>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/27>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/4>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/5>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/6>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/7>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/8>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/9> ;
+        ldp:contains <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members> .
+
+=======
+Members
+=======
+
+The :code:`Collection` resource points at a :code:`Members` resource via :code:`ldp:contains`. The :code:`Members` resource
+contains a list of proxies for each work:
+
+.. code-block:: turtle
+
+    @prefix fedora: <http://fedora.info/definitions/v4/repository#> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members> a fedora:Container,
+            fedora:Resource,
+            pcdm:Object,
+            ldp:Container,
+            ldp:IndirectContainer,
+            ldp:RDFSource ;
+        fedora:created "2024-10-15T21:04:02.645000+00:00"^^xsd:dateTime ;
+        fedora:createdBy "fedoraAdmin" ;
+        fedora:hasParent <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion> ;
+        fedora:lastModified "2024-10-15T21:05:12.628000+00:00"^^xsd:dateTime ;
+        fedora:lastModifiedBy "fedoraAdmin" ;
+        fedora:writable false ;
+        ldp:contains <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/10Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/11Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/12Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/13Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/15Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/16Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/17Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/18Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/19Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/20Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/21Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/22Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/23Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/24Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/25Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/26Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/27Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/2Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/3Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/4Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/5Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/6Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/7Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/8Proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/9Proxy> ;
+        ldp:hasMemberRelation pcdm:hasMember ;
+        ldp:insertedContentRelation <http://www.openarchives.org/ore/terms#proxyFor> ;
+        ldp:membershipResource <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion> .
+
+============
+Work Proxies
+============
+
+Each work has a corresponding proxy.  As far as I can tell, these proxies do not include :code:`iana` properties and thus
+are not used for ordering works in a collection.
+
+.. code-block:: turtle
+
+    @prefix fedora: <http://fedora.info/definitions/v4/repository#> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix ns1: <http://www.openarchives.org/ore/terms#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members/3Proxy> a fedora:Container,
+            fedora:Resource,
+            pcdm:Object,
+            ldp:Container,
+            ldp:RDFSource ;
+        fedora:created "2024-10-15T21:07:15.097000+00:00"^^xsd:dateTime ;
+        fedora:createdBy "fedoraAdmin" ;
+        fedora:hasParent <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion/members> ;
+        fedora:lastModified "2024-10-15T21:07:15.097000+00:00"^^xsd:dateTime ;
+        fedora:lastModifiedBy "fedoraAdmin" ;
+        fedora:writable false ;
+        ns1:proxyFor <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3> .
+
+=====
+Works
+=====
+
+Every :code:`Work` is described by a resource.  The work, points at its parts via a :code:`pcdm:hasMember` property. Each
+work has a :code:`fedora:hasParent` relationship to the :code:`Collection Objects` resource. It does not point at the
+:code:`Collection` resource directly. Each work has :code:`iana:first` and :code:`iana:last` properties that point at the
+first and last proxy in a work for sequencing. The work has a :code:`ldp:contains` property that points at its :code:`Pages`
+resource and its :code:`orderProxies` resource.
+
+.. code-block:: turtle
+    :emphasize-lines: 16, 79-82, 20-65
+
+    @prefix dc: <http://purl.org/dc/elements/1.1/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+    @prefix fedora: <http://fedora.info/definitions/v4/repository#> .
+    @prefix iana: <http://www.iana.org/assignments/relation/> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3> a fedora:Container,
+            fedora:Resource,
+            pcdm:Object,
+            ldp:Container,
+            ldp:RDFSource ;
+        fedora:created "2024-10-15T21:07:15.097000+00:00"^^xsd:dateTime ;
+        fedora:createdBy "fedoraAdmin" ;
+        fedora:hasParent <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects> ;
+        fedora:lastModified "2024-10-15T21:07:15.097000+00:00"^^xsd:dateTime ;
+        fedora:lastModifiedBy "fedoraAdmin" ;
+        fedora:writable false ;
+        pcdm:hasMember <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_0>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_1>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_10>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_11>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_12>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_13>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_14>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_15>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_16>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_17>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_18>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_19>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_2>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_20>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_21>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_22>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_23>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_24>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_25>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_26>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_27>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_28>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_29>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_3>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_30>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_31>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_32>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_33>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_34>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_35>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_36>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_37>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_38>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_39>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_4>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_40>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_41>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_42>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_43>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_44>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_45>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_5>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_6>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_7>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_8>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_9> ;
+        dc:creator "Blumberg, Stephen Carrie" ;
+        dc:description "From the professional archives of Nicholas A. Basbanes, now held by Cushing Memorial Library & Archives, Texas A&M University." ;
+        dc:format "reformatted digital" ;
+        dc:language "eng" ;
+        dc:rights "In copyright - Educational Use Permitted; For more information see:  http://rightsstatements.org/vocab/InC-EDU/1.0/" ;
+        dc:subject "Blumberg, Stephen Carrie",
+            "Book thefts",
+            "Bookplates",
+            "Collectibles" ;
+        dc:title "Scrapbook of Stolen Bookplates. Volume Two." ;
+        dc:type "Albums (Books)" ;
+        dcterms:abstract "The bookplates collected here were removed by Stephen Blumberg from volumes he stole and arranged geographically into these blank pages. In addition to being trophies of his many exploits, however, the bookplates provided valuable documentary evidence to suggest whence the books had been stolen. The present volume is one of three such scrapbooks, which were presented to Basbanes following the end of the trial. Ironically, many personal bookplates bear warnings against book-theft and levy curses upon those who borrow but do not return." ;
+        dcterms:type "StillImage" ;
+        iana:first <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_0_proxy> ;
+        iana:last <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_45_proxy> ;
+        ldp:contains <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages> .
+
+==================
+Collection Objects
+==================
+
+Each Collection has a :code:`Collection Objects` resource. It acts a proxy for the Collection, but does not have :code:`iana`
+properties allowing the collection to be ordered in a list of other collections. It has a :code:`ldp:contains` property
+that points at all the works in the collection. It has a :code:`ldp:membershipResource` that points at the collection it
+is a proxy for:
+
+.. code-block:: turtle
+    :emphasize-lines: 18-42, 45
+
+    @prefix fedora: <http://fedora.info/definitions/v4/repository#> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects> a fedora:Container,
+            fedora:Resource,
+            pcdm:Object,
+            ldp:Container,
+            ldp:IndirectContainer,
+            ldp:RDFSource ;
+        fedora:created "2024-10-15T21:04:02.645000+00:00"^^xsd:dateTime ;
+        fedora:createdBy "fedoraAdmin" ;
+        fedora:hasParent <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13> ;
+        fedora:lastModified "2024-10-15T21:05:12.034000+00:00"^^xsd:dateTime ;
+        fedora:lastModifiedBy "fedoraAdmin" ;
+        fedora:writable false ;
+        ldp:contains <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/10>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/11>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/12>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/13>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/15>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/16>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/17>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/18>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/19>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/2>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/20>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/21>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/22>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/23>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/24>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/25>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/26>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/27>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/4>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/5>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/6>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/7>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/8>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/9> ;
+        ldp:hasMemberRelation pcdm:hasMember ;
+        ldp:insertedContentRelation <http://www.openarchives.org/ore/terms#proxyFor> ;
+        ldp:membershipResource <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion> .
+
+
+============
+orderProxies
+============
+
+Each :code:`Work` has a corresponding :code:`orderProxies` resource.  This resource :code:`ldp:contains` all proxies in
+the work. It has a :code:`fedora:hasParent` relationship and a :code:`ldp:membershipResource` that refers to the parent
+work.
+
+.. code-block:: turtle
+    :emphasize-lines: 14, 18-63, 65
+
+    @prefix fedora: <http://fedora.info/definitions/v4/repository#> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies> a fedora:Container,
+            fedora:Resource,
+            pcdm:Object,
+            ldp:Container,
+            ldp:DirectContainer,
+            ldp:RDFSource ;
+        fedora:created "2024-10-15T21:07:15.097000+00:00"^^xsd:dateTime ;
+        fedora:createdBy "fedoraAdmin" ;
+        fedora:hasParent <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3> ;
+        fedora:lastModified "2024-10-15T21:07:15.097000+00:00"^^xsd:dateTime ;
+        fedora:lastModifiedBy "fedoraAdmin" ;
+        fedora:writable false ;
+        ldp:contains <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_0_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_10_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_11_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_12_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_13_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_14_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_15_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_16_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_17_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_18_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_19_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_1_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_20_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_21_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_22_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_23_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_24_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_25_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_26_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_27_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_28_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_29_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_2_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_30_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_31_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_32_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_33_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_34_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_35_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_36_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_37_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_38_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_39_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_3_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_40_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_41_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_42_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_43_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_44_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_45_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_4_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_5_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_6_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_7_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_8_proxy>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_9_proxy> ;
+        ldp:isMemberOfRelation <http://www.openarchives.org/ore/terms#proxyIn> ;
+        ldp:membershipResource <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3> .
+
+
+
+=====
+Pages
+=====
+
+Each work has a :code:`Pages` resource.  This resource lists all the parts / pages in a work. It has :code:`fedora:hasParent`
+and :code:`ldp:membershipResource` properties that point at the parent work. It also has a :code:`ldp:contains` property
+that lists all the pages / parts in a work.
+
+.. code-block:: turtle
+    :emphasize-lines: 14, 18-63, 65
+
+    @prefix fedora: <http://fedora.info/definitions/v4/repository#> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages> a fedora:Container,
+            fedora:Resource,
+            pcdm:Object,
+            ldp:Container,
+            ldp:DirectContainer,
+            ldp:RDFSource ;
+        fedora:created "2024-10-15T21:07:15.097000+00:00"^^xsd:dateTime ;
+        fedora:createdBy "fedoraAdmin" ;
+        fedora:hasParent <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3> ;
+        fedora:lastModified "2024-10-15T21:07:15.097000+00:00"^^xsd:dateTime ;
+        fedora:lastModifiedBy "fedoraAdmin" ;
+        fedora:writable false ;
+        ldp:contains <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_0>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_1>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_10>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_11>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_12>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_13>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_14>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_15>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_16>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_17>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_18>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_19>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_2>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_20>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_21>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_22>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_23>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_24>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_25>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_26>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_27>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_28>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_29>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_3>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_30>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_31>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_32>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_33>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_34>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_35>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_36>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_37>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_38>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_39>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_4>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_40>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_41>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_42>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_43>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_44>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_45>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_5>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_6>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_7>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_8>,
+            <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_9> ;
+        ldp:hasMemberRelation pcdm:hasMember ;
+        ldp:membershipResource <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3> .
+
+======
+A Page
+======
+
+Every part or page of a work is described by a :code:`Page` resource. It has a :code:`fedora:hasParent` property that
+refers to a work's :code:`Pages` resource. It has a :code:`ldp:contains` property that refers to the work's :code:`Files`
+resource and a :code:`pcdm:hasFile` resource that refers to the actual file resource:
+
+.. code-block:: turtle
+    :emphasize-lines: 13, 17, 18
+
+    @prefix fedora: <http://fedora.info/definitions/v4/repository#> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_29> a fedora:Container,
+            fedora:Resource,
+            pcdm:Object,
+            ldp:Container,
+            ldp:RDFSource ;
+        fedora:created "2024-10-15T21:07:15.097000+00:00"^^xsd:dateTime ;
+        fedora:createdBy "fedoraAdmin" ;
+        fedora:hasParent <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages> ;
+        fedora:lastModified "2024-10-15T21:07:15.097000+00:00"^^xsd:dateTime ;
+        fedora:lastModifiedBy "fedoraAdmin" ;
+        fedora:writable false ;
+        pcdm:hasFile <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_29/files/Blumberg-Bookplates-Volume-two_30.jpg> ;
+        ldp:contains <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_29/files> .
+
+=======
+A Proxy
+=======
+
+Every page or part has a corresponding :code:`Proxy` for the part.  This resource is critical in that it allows the work's
+canvases to be ordered. It does this via properties from :code:`iana`.  The :code:`iana:prev` property (if present), lists
+the preceding canvas while the :code:`iana:next` property (if present) lists the following canvas.  If one is missing, that
+signifies the proxy is first or last in a sequence. The :code:`ore:proxyFor` property refers to the page or part the :code:`Proxy`
+represents and the :code:`ore:proxyIn` property refers to the work it belongs to. It also has a :code:`fedora:hasParent`
+property that refers to the :code:`orderProxies` resource it belongs to.
+
+.. code-block:: turtle
+    :emphasize-lines: 19-22, 15
+
+    @prefix fedora: <http://fedora.info/definitions/v4/repository#> .
+    @prefix iana: <http://www.iana.org/assignments/relation/> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix ore: <http://www.openarchives.org/ore/terms#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_29_proxy> a fedora:Container,
+            fedora:Resource,
+            pcdm:Object,
+            ldp:Container,
+            ldp:RDFSource ;
+        fedora:created "2024-10-15T21:07:15.097000+00:00"^^xsd:dateTime ;
+        fedora:createdBy "fedoraAdmin" ;
+        fedora:hasParent <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies> ;
+        fedora:lastModified "2024-10-15T21:07:15.097000+00:00"^^xsd:dateTime ;
+        fedora:lastModifiedBy "fedoraAdmin" ;
+        fedora:writable false ;
+        iana:next <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_30_proxy> ;
+        iana:prev <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/orderProxies/page_28_proxy> ;
+        ore:proxyFor <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_29> ;
+        ore:proxyIn <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3> .
+
+=====
+Files
+=====
+
+Each page or part has a :code:`Files` resource.  This has a :code:`ldp:contains` property that points at the file this
+represents. It also has a :code:`ldp:membershipResource` and a :code:`fedora:has Parent` that points at the page or part it belongs to.
+
+.. code-block:: turtle
+    :emphasize-lines: 14, 18, 20
+
+    @prefix fedora: <http://fedora.info/definitions/v4/repository#> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_29/files> a fedora:Container,
+            fedora:Resource,
+            pcdm:Object,
+            ldp:Container,
+            ldp:DirectContainer,
+            ldp:RDFSource ;
+        fedora:created "2024-10-15T21:07:15.097000+00:00"^^xsd:dateTime ;
+        fedora:createdBy "fedoraAdmin" ;
+        fedora:hasParent <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_29> ;
+        fedora:lastModified "2024-10-15T21:07:15.097000+00:00"^^xsd:dateTime ;
+        fedora:lastModifiedBy "fedoraAdmin" ;
+        fedora:writable false ;
+        ldp:contains <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_29/files/Blumberg-Bookplates-Volume-two_30.jpg> ;
+        ldp:hasMemberRelation pcdm:hasFile ;
+        ldp:membershipResource <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_29> .
+
+========
+The File
+========
+
+Every :code:`File` has a corresponding resource that describes it.  While things point directly at the file, the resource
+is available by appending :code:`/fcr:metadata` to the end of the URI. This resource has many properties about the file itself.
+It has a :code:`iana:describedBy` property that points at the rdf resource of the file. It also has a :code:`fedora:hasParent`
+
+.. code-block:: turtle
+    :emphasize-lines: 17, 24
+
+    @prefix dc: <http://purl.org/dc/elements/1.1/> .
+    @prefix fedora: <http://fedora.info/definitions/v4/repository#> .
+    @prefix iana: <http://www.iana.org/assignments/relation/> .
+    @prefix ldp: <http://www.w3.org/ns/ldp#> .
+    @prefix ns1: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+    @prefix ns2: <http://www.loc.gov/premis/rdf/v1#> .
+    @prefix pcdm: <http://pcdm.org/models#> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+    <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_29/files/Blumberg-Bookplates-Volume-two_30.jpg> a fedora:Binary,
+            fedora:Resource,
+            pcdm:File,
+            ldp:NonRDFSource ;
+        fedora:created "2024-10-15T21:07:15.097000+00:00"^^xsd:dateTime ;
+        fedora:createdBy "fedoraAdmin" ;
+        fedora:hasFixityService <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_29/files/Blumberg-Bookplates-Volume-two_30.jpg/fcr:fixity> ;
+        fedora:hasParent <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_29/files> ;
+        fedora:lastModified "2024-10-15T21:07:15.097000+00:00"^^xsd:dateTime ;
+        fedora:lastModifiedBy "fedoraAdmin" ;
+        fedora:writable false ;
+        dc:filename "Blumberg-Bookplates-Volume-two_30.jpg" ;
+        ns1:filename "Blumberg-Bookplates-Volume-two_30.jpg" ;
+        ns1:hasMimeType "image/jpeg" ;
+        iana:describedby <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/BasbanesEternalPassion_objects/3/pages/page_29/files/Blumberg-Bookplates-Volume-two_30.jpg/fcr:metadata> ;
+        ns2:hasMessageDigest <urn:sha1:e268fa174a6a15f29ddf7858a5d5ecaeb7aaaf45> ;
+        ns2:hasSize "789886"^^xsd:long .
+
+
+Examples
+--------
+
+--------------
 Charting Texas
 --------------
 
@@ -208,6 +797,7 @@ A "pages"
         ldp:membershipResource <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/charting-texas_objects/10> ;
         ldp:hasMemberRelation pcdm:hasMember .
 
+-------------------------------------
 Stephen Powys Marks London Collection
 -------------------------------------
 
