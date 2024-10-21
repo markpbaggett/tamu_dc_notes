@@ -594,7 +594,6 @@ It has a :code:`iana:describedBy` property that points at the rdf resource of th
         ns2:hasMessageDigest <urn:sha1:e268fa174a6a15f29ddf7858a5d5ecaeb7aaaf45> ;
         ns2:hasSize "789886"^^xsd:long .
 
-
 Examples
 --------
 
@@ -1110,3 +1109,10 @@ Files has a Resource instead of Children in CAP.
         ldp:hasMemberRelation pcdm:hasMember ;
         ldp:membershipResource <https://api.library.tamu.edu/fcrepo/rest/3b/6f/c3/25/3b6fc325-f6ca-41d8-b91e-8c5db3be8c13/Stephen_Powys_Marks_London_Collection_objects/10/pages/page_1> .
 
+Visualizing Current Practices
+-----------------------------
+
+If useful, here is a visualization of a simple collection with 1 collection, 1 work, and 1 file.  For ease of reading, excess
+classes and literal relationships have been removed.
+
+.. image:: ../_static/images/1_collection_1_work_1_file_just_relationships.png
