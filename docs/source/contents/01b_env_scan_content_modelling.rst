@@ -13,6 +13,51 @@ For items with the concept of "Children", a note with an example is included in 
 Concepts
 --------
 
+==============================================================
+Containers versus Direct Containers versus Indirect Containers
+==============================================================
+
+Each of our models is either an :code:`ldp:Container` and may also be an :code:`ldp:DirectContainer` or
+:code:`ldp:IndirectContainer`.
+
+In Linked Data Platform, an :code:`ldp:Container` is a basic type of container that can hold other resources. It is
+similar to a collection or a directory that can contain multiple resources.
+
+An :code:`ldp:DirectContainer` is a container where the membership of the container is managed directly. However, unlike
+the basic :code:`ldp:Container`, which simply holds resources, an ldp:DirectContainer maintains a relationship between the
+container and a designated membership resource using a specified predicate. When you create a resource within an
+:code:`ldp:DirectContainer`, the new resource becomes a member of the membership resource that the container points to.
+The container automatically adds the new resource to this membership resource by using a membership predicate.
+
+An :code:`ldp:IndirectContainer` is a more
+complex type of container where the relationships between the container and its members are indirect. Instead of adding
+the resource directly to the container, the server uses a separate resource that acts as a proxy or intermediary between
+the container and the members.
+
+From my understanding, the initial intent of our models was to create as much abstraction as possible. By having indirect
+containers everywhere, librarians would be able to create interesting presentations of our collections and works.
+
+Of the models below, these are just containers:
+
+* Collection
+* Work Proxies
+* Works
+* A page
+* A proxy
+
+These are our indirect containers:
+
+* Members
+* Collection Objects
+
+These are our direct containers:
+
+* orderProxies
+* Pages
+* Files
+
+Our lone :code:`ldp:nonRDFResource` is the File.
+
 ==========
 Collection
 ==========
